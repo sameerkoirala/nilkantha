@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+@include('display.header')
 
-    <meta charset="utf-8">
-
-    <title>{{ $type ?? config('app.name', 'Nilkantha School') }}</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/style_gallery.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-</head>
-
-
-<body>
-
-<header>
-
-    @include('display.navbar')
-    <div class="bgimg"></div>
-</header>
+@include('display.navbar')
 
 
 <!--  gallery -->
@@ -47,9 +27,7 @@
                 @endif
             @endfor
         </div>
-{{--        <div class="pagination-wrapper text-center"> {!! $images->appends(['search' => Request::get('search')])->render() !!} </div>--}}
     </div>
-
 </section>
 
 @include('display.footer')

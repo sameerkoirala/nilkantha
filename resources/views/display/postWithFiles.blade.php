@@ -40,9 +40,6 @@
                         <td><img src=" {{ url($post->image_path)}}" width="100%" height="200px"/></td>
                     @endif
                     {!! $post->description !!}
-{{--                    @if(isset($post->file_path))--}}
-{{--                        <button class="btn"><i class="fa fa-download"></i> {{ $post->title }}</button>--}}
-{{--                    @endif--}}
 
                     @if(sizeof($post->files) > 0)
                         @for ($index = 0; $index < sizeof($post->files); $index++)

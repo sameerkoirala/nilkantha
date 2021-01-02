@@ -65,13 +65,21 @@ class AlumniController extends Controller
     public function store(Request $request)
     {
 
-        $requestData = $request->all();
-                if ($request->hasFile('image_path')) {
-            $requestData['image_path'] = 'storage/' . $request->file('image_path')
+        $validateData = $request->validate([
+            'first_name' => ['bail', 'required', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'middle_name' => ['bail', 'nullable', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'last_name' => ['bail', 'required', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'batch' => ['bail', 'required', 'max:255', 'regex:/^[0-9]*$/'],
+            'current_involvement' => ['bail', 'required', 'max:255'],
+            'description' => ['bail', 'required'],
+            'image_path' => ['bail', 'required'],
+        ]);
+        if ($request->hasFile('image_path')) {
+            $validateData['image_path'] = 'storage/' . $request->file('image_path')
                 ->store('uploads', 'public');
         }
 
-        Alumnus::create($requestData);
+        Alumnus::create($validateData);
 
         return redirect('alumni')->with('flash_message', 'Alumnus added!');
     }
@@ -115,21 +123,29 @@ class AlumniController extends Controller
     public function update(Request $request, $id)
     {
 
-        $requestData = $request->all();
+        $validateData = $request->validate([
+            'first_name' => ['bail', 'required', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'middle_name' => ['bail', 'nullable', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'last_name' => ['bail', 'required', 'max:255', 'regex:/^[a-z|A-Z]*$/'],
+            'batch' => ['bail', 'required', 'max:255', 'regex:/^[0-9]*$/'],
+            'current_involvement' => ['bail', 'required', 'max:255'],
+            'description' => ['bail', 'required'],
+            'image_path' => ['bail', 'required'],
+        ]);
         $alumnus = Alumnus::findOrFail($id);
 
         if ($request->hasFile('image_path')) {
-            $requestData['image_path'] = 'storage/' . $request->file('image_path')
+            $validateData['image_path'] = 'storage/' . $request->file('image_path')
                 ->store('uploads', 'public');
             $oldImagePath = $alumnus->image_path;
             $oldImagePath = str_replace("storage/",storage_path('') . '/app/public/' , $oldImagePath);
         }
         else
         {
-            $requestData['image_path'] = $alumnus->image_path;
+            $validateData['image_path'] = $alumnus->image_path;
         }
 
-        $alumnus->update($requestData);
+        $alumnus->update($validateData);
 
         if (isset($oldImagePath)) {
             if(File::exists($oldImagePath)){

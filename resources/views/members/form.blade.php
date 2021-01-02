@@ -1,16 +1,16 @@
 <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
     <label for="first_name" class="control-label">{{ 'First Name' }}</label>
-    <input class="form-control" name="first_name" type="text" id="first_name" value="{{ isset($member->first_name) ? $member->first_name : ''}}" >
+    <input class="form-control" name="first_name" type="text" id="first_name" value="{{ old('first_name', isset($member->first_name) ? $member->first_name : '') }}" >
     {!! $errors->first('first_name', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('middle_name') ? 'has-error' : ''}}">
     <label for="middle_name" class="control-label">{{ 'Middle Name' }}</label>
-    <input class="form-control" name="middle_name" type="text" id="middle_name" value="{{ isset($member->middle_name) ? $member->middle_name : ''}}" >
+    <input class="form-control" name="middle_name" type="text" id="middle_name" value="{{ old('middle_name', isset($member->middle_name) ? $member->middle_name : '') }}" >
     {!! $errors->first('middle_name', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('last_name') ? 'has-error' : ''}}">
     <label for="last_name" class="control-label">{{ 'Last Name' }}</label>
-    <input class="form-control" name="last_name" type="text" id="last_name" value="{{ isset($member->last_name) ? $member->last_name : ''}}" >
+    <input class="form-control" name="last_name" type="text" id="last_name" value="{{ old('last_name', isset($member->last_name) ? $member->last_name : '') }}" >
     {!! $errors->first('last_name', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('type') ? 'has-error' : ''}}">
@@ -24,12 +24,12 @@
 </div>
 <div id="designation" class="form-group {{ $errors->has('designation') ? 'has-error' : ''}}">
     <label for="designation" class="control-label">{{ 'Designation' }}</label>
-    <input class="form-control" name="designation" type="text" id="designation" value="{{ isset($member->designation) ? $member->designation : ''}}" >
-    {!! $errors->first('designation', '<p class="help-block">:message</p>') !!}
+    <input class="form-control" name="designation" type="text" id="designation" value="{{ old('designation', isset($member->designation) ? $member->designation : '') }}" >
+    {!! $errors->first('designation', '<p class="help-block">:message</p>') !!}'education',
 </div>
 <div id="education" class="form-group {{ $errors->has('education') ? 'has-error' : ''}}">
     <label for="education" class="control-label">{{ 'Education' }}</label>
-    <input class="form-control" name="education" type="text" id="education" value="{{ isset($member->education) ? $member->education : ''}}" >
+    <input class="form-control" name="education" type="text" id="education" value="{{ old('education', isset($member->education) ? $member->education : '') }}" >
     {!! $errors->first('education', '<p class="help-block">:message</p>') !!}
 </div>
 <div id="department" class="form-group {{ $errors->has('department') ? 'has-error' : ''}}">
@@ -54,7 +54,6 @@
     <input class="form-control" name="image_path" type="file" id="image" value="{{ isset($member->image_path) ? $member->image_path : ''}}" >
     {!! $errors->first('image_path', '<p class="help-block">:message</p>') !!}
 </div>
-
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">

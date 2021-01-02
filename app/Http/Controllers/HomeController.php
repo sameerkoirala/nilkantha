@@ -31,38 +31,38 @@ class HomeController extends Controller
 
     public function landingPage()
     {
-//        $landingPagePost = Post::select('id')->with('images:id,title,path,post_id')->firstWhere('category', "landing_page");
-//        $carouselImages = $landingPagePost->images->map(function ($item, $key) {
-//            return ["path" => $item->path, "title" => $item->title];
-//        });
-//        $notices = Post::select( 'id', 'title' )
-//            ->where('category', "notices")
-//            ->latest()
-//            ->take(5)
-//            ->get();
-//
-//        $message = Post::select( 'id', 'title', 'description', 'image_path' )
-//            ->where('category', "about_us")
-//            ->where('landing_page', 1)
-//            ->latest()->take(1)->get();
-//
-//        $featured = Post::select( 'id', 'title', 'description' )
-//            ->where('category', "news")
-//            ->latest()
-//            ->take(1)
-//            ->get();
-//
-//        $events = Post::select( 'id', 'title', 'start_time', 'end_time', 'location', 'date' )
-//            ->where('category', "events")
-//            ->latest()
-//            ->take(6)
-//            ->get();
+        $landingPagePost = Post::select('id')->with('images:id,title,path,post_id')->firstWhere('category', "landing_page");
+        $carouselImages = $landingPagePost->images->map(function ($item, $key) {
+            return ["path" => $item->path, "title" => $item->title];
+        });
+        $notices = Post::select( 'id', 'title' )
+            ->where('category', "notices")
+            ->latest()
+            ->take(5)
+            ->get();
 
-        $carouselImages = Post::where('id',1000000)->get();
-        $notices = Post::where('id',1000000)->get();
-        $message = Post::where('id',1000000)->get();
-        $featured = Post::where('id',1000000)->get();
-        $events = Post::where('id',1000000)->get();
+        $message = Post::select( 'id', 'title', 'description', 'image_path' )
+            ->where('category', "about_us")
+            ->where('landing_page', 1)
+            ->latest()->take(1)->get();
+
+        $featured = Post::select( 'id', 'title', 'description' )
+            ->where('category', "news")
+            ->latest()
+            ->take(1)
+            ->get();
+
+        $events = Post::select( 'id', 'title', 'start_time', 'end_time', 'location', 'date' )
+            ->where('category', "events")
+            ->latest()
+            ->take(6)
+            ->get();
+
+//        $carouselImages = Post::where('id',1000000)->get();
+//        $notices = Post::where('id',1000000)->get();
+//        $message = Post::where('id',1000000)->get();
+//        $featured = Post::where('id',1000000)->get();
+//        $events = Post::where('id',1000000)->get();
 
         $posts = collect([
             "carousel" => $carouselImages,

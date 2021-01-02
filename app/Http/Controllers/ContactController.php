@@ -147,9 +147,10 @@ class ContactController extends Controller
 
     public function display()
     {
-        $contacts = Contact::all();
+        $contact = Contact::first();
+        $type = 'contact';
 //        echo json_encode($contact);
-        return view('display.contactUs', compact('contacts'));
+        return view('display.contactUs', compact('contact', 'type'));
     }
 
     public function sendMail(Request $request){
@@ -157,12 +158,15 @@ class ContactController extends Controller
 //        return json_encode($request->all());
         $name = $request->get('name');
         $email = $request->get('email');
-        $data = array('name'=> $name);
+        $messageVal = $request->get('message');
+
+        $data = array('name'=> $name, 'messageVal'=> $messageVal);
         Mail::send('layouts.mail', $data, function ($message) use ($name, $email) {
             $message->to('info@nilkantha.com','Nilkantha Contact')->subject('Inquiry Message');
             $message->from($email, $name);
         });
+//        Mail::to('info@test.com')->send('layouts.mail');
         $contacts = Contact::all();
-        return view('display.contactUs', compact('contacts'))->with('flash_message', 'Mail Sent.');
+        return redirect('contacts')->with('flash_message', 'Mail Sent.');
     }
 }

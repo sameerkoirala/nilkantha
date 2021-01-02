@@ -22,7 +22,7 @@ class PostsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['display','displayPostWithLink','displayPost']]);
+        $this->middleware('auth', ['except' => ['display','displayPostWithLink','displayPost','displayGallery']]);
     }
 
     /**
@@ -309,7 +309,10 @@ class PostsController extends Controller
         if ($type === 'galleries'){
             $posts = $this->getAllLatestPost($type);
             foreach ($posts as $post) {
-                $post->image_path = $post->images[0]->path;
+                $images = $post->images;
+                if (!$images->isEmpty()) {
+                    $post->image_path = $images[0]->path;
+                }
             }
         }
         elseif ($type === 'admission' || $type === 'courses' || $type === 'alumni' )
@@ -433,7 +436,8 @@ class PostsController extends Controller
         $images = $post->images;
         $galleryName = $post->title;
 //        echo json_encode($images);
-        return view('display.galleryImages', compact('images','galleryName'));
+        $type = 'galleryImages';
+        return view('display.galleryImages', compact('images', 'type', 'galleryName'));
     }
 
     public static function getCategoryType($post_id)

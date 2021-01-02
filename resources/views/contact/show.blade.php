@@ -6,8 +6,6 @@
             <form method="POST" action="{{ url('/contact/saveInquiryDetails') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                @include ('contact.contactus', ['formMode' => 'create'])
-
             </form>
             <div class="col-md-9">
                 <div class="card">

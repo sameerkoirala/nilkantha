@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-
-    <title>{{ config('app.name', 'Nilkantha School') }}</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/academicsEnglish.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/FeaturedAlumni.css') }}">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-</head>
-
-
-<body>
-
-<header>
-
+@include('display.header')
 @include('display.navbar')
-    <div class="bgimg"></div>
-</header>
 
 <!-- start of the academics section -->
 @if( $type === 'Managements')
-    <section class="alumni">
+    <section class="academics">
 
         <div class="container">
 
@@ -38,10 +15,6 @@
                 <!-- start of vertical side navbar -->
             @include('members._sidebar')
             <!-- end of vertical side navbar -->
-            @if($type === 'Faculties')
-                @include('display.departmentlists')
-            @endif
-
 
                 <!-- Page content - profile of few best performing ex-students  -->
                 <div class="col-sm-9 page-content  " id="content">
@@ -85,9 +58,6 @@
                 <!-- start of vertical side navbar -->
                 @include('members._sidebar')
                 <!-- end of vertical side navbar -->
-                @if($type === 'Faculties')
-                    @include('display.departmentlists')
-                @endif
                 <!-- middle space between side navbar and table -->
     {{--            <div class="col-sm-1"></div>--}}
 

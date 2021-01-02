@@ -6,6 +6,9 @@
 
         <li class="nav-item ">
             <a href="{{ url('/academics/faculties') }}" class="nav-link text-dark {{ $type === 'faculties' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Faculties</a>
+            @if($type === 'Faculties')
+                @include('display.departmentlists')
+            @endif
         </li>
 
         <li class="nav-item ">

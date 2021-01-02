@@ -1,9 +1,8 @@
-
 <section class="academics">
 
     <div class="container">
 
-        <h3 class="text-uppercase py-5">{{ isset($type) ? $type : 'Post' }}</h3>
+        <h3 class="text-uppercase py-4">{{ isset($type) ? $type : 'Post' }}</h3>
 
         <div class="row">
 
@@ -16,7 +15,7 @@
 
                     @foreach($recentPosts as $post)
                         <li class="nav-item ">
-                            <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark current "><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
+                            <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark current bg-light"><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
                         </li>
                     @endforeach
 
@@ -30,17 +29,22 @@
 
             <!-- Page content - nepali department  -->
             <div class="col-sm-8 page-content  " id="content">
+
                 @foreach($posts as $post)
 
                     <h5 class="text-gray text-uppercase">{{ $post->title }}</h5>
                     <p></p>
+
                     @if(isset($post->image_path))
                         <td><img src=" {{ url("$post->image_path")}}" width="100%" height="200px"/></td>
                     @endif
+
+                    {!! $post->description !!}
+
                     @if(isset($post->file_path))
                         <td><a href="{{ url("$post->file_path")}}">Download Files</a></td>
                     @endif
-                    {!! $post->description !!}
+
                 @endforeach
 
             </div>

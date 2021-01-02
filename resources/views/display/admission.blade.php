@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-
-    <title>{{ $type ?? config('app.name', 'Nilkantha School') }}</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/style_admissionform.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-</head>
+@include('display.header')
+@include('display.navbar')
 
 
-<body>
-
-<header>
-
-    @include('display.navbar')
-    <div class="bgimg"></div>
-</header>
-
-<!-- start of the academics section -->
-<section class="admissionform">
+<section class="academics">
 
     <div class="container">
 
@@ -33,8 +12,8 @@
         <div class="row">
 
             <!-- start of vertical side navbar -->
-            @include('display.admissionSidebar')
-            <!-- end of vertical side navbar -->
+        @include('display.admissionSidebar')
+        <!-- end of vertical side navbar -->
 
             <!-- middle space between side navbar and table -->
             <div class="col-sm-1"></div>
@@ -68,6 +47,7 @@
 </section>
 
 @include('display.footer')
+
 
 
 

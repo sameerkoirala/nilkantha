@@ -25,7 +25,7 @@ class Contact extends Model
      *
      * @var array
      */
-    protected $fillable = ['address', 'phone', 'email', 'googleMapUrl'];
+    protected $fillable = ['address', 'phone', 'email', 'facebookPage', 'instagramLink', 'YoutubeLink', 'googleMapUrl'];
 
 
 }

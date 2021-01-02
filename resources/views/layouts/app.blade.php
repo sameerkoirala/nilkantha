@@ -92,10 +92,14 @@
         toggleDepartment();
         // $val = $('#type').val();
         // alert($val);
-        $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert").fadeTo(5000, 500).slideUp(500, function(){
             $(".alert").slideUp(500);
         });
-        $('.ckeditor2').ckeditor();
+        $('.ckeditor2').ckeditor({
+            toolbar: 'Full',
+            enterMode : CKEDITOR.ENTER_BR,
+            shiftEnterMode: CKEDITOR.ENTER_P
+        });
     });
     function toggleDepartment(){
         if($('#type').val() === 'management') {

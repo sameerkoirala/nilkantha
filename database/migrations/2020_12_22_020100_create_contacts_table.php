@@ -17,6 +17,9 @@ class CreateContactsTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email');
+            $table->string('facebookPage');
+            $table->string('instagramLink');
+            $table->string('youtubeLink');
             $table->longText('googleMapUrl');
             $table->timestamps();
         });

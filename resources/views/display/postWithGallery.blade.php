@@ -14,9 +14,12 @@
 
                 <ul class="nav flex-column bg-white mb-0">
 
+                </ul>
+                <ul class="nav flex-column bg-white mb-0">
+
                     @foreach($recentPosts as $post)
                         <li class="nav-item ">
-                            <a href="{{ url('/posts') . '/' . $type . '/' . $post['id']}}" class="nav-link text-dark current "><i class="fa fa-chevron-right mr-3 "></i>{{ $post['title'] }}</a>
+                            <a href="{{ url('/posts') . '/' . $type . '/' . $post['id']}}" class="nav-link text-dark current bg-light"><i class="fa fa-chevron-right mr-3 "></i>{{ $post['title'] }}</a>
                         </li>
                     @endforeach
 

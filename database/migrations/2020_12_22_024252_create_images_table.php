@@ -32,3 +32,4 @@ class CreateImagesTable extends Migration
         Schema::drop('images');
     }
 }
+
