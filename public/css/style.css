@@ -551,6 +551,15 @@ body{
     padding: 5px;
 }
 
+/*Footer Content*/
+.footer_content
+{
+  padding-left: 100px;
+}
+.col-md-4.col-sm-6.col-12.inline {
+    padding-right: 138px;
+}
+
 
 
 
