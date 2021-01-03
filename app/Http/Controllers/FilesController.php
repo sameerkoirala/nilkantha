@@ -32,9 +32,9 @@ class FilesController extends Controller
 
         if (!empty($keyword)) {
             $files = File::where('path', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
-            $files = File::latest()->paginate($perPage);
+            $files = File::latest()->simplePaginate($perPage);
         }
 
         return view('files.index', compact('files'));
@@ -97,7 +97,7 @@ class FilesController extends Controller
         $post_id = $id;
         $perPage = 25;
 
-        $files = $post->files()->paginate($perPage);
+        $files = $post->files()->simplePaginate($perPage);
 
         return view('files.index', compact('files', 'post_id'));
     }

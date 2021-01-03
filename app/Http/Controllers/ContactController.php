@@ -40,9 +40,9 @@ class ContactController extends Controller
                 ->orWhere('email', 'LIKE', "%$keyword%")
                 ->orWhere('googleMapUrl', 'LIKE', "%$keyword%")
                 ->orWhere('mapImage', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
-            $contact = Contact::latest()->paginate($perPage);
+            $contact = Contact::latest()->simplePaginate($perPage);
         }
 
         return view('contact.index', compact('contact'));

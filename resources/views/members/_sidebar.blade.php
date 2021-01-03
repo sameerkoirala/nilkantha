@@ -5,12 +5,13 @@
     <ul class="nav flex-column bg-white mb-0">
 
         <li class="nav-item ">
-            <a href="{{ url('/academics/departments') }}" class="nav-link text-dark bg-light {{ $type === 'faculties' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Departments</a>
+            <a href="{{ url('/academics/managements') }}" class="nav-link text-dark bg-light {{ $type === 'managements' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Managements</a>
         </li>
 
         <li class="nav-item ">
-            <a href="{{ url('/academics/managements') }}" class="nav-link text-dark bg-light {{ $type === 'managements' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Managements</a>
+            <a href="{{ url('/academics/departments') }}" class="nav-link text-dark bg-light {{ $type === 'faculties' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Departments</a>
         </li>
+
 
         <li class="nav-item ">
             <a href="{{ url('/academics/others') }}" class="nav-link text-dark bg-light {{ $type === 'others' ? 'current' : '' }}"><i class="fa fa-chevron-right mr-3 "></i>Others</a>

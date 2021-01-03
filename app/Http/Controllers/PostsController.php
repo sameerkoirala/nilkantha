@@ -37,13 +37,13 @@ class PostsController extends Controller
 
         if (!empty($keyword)) {
             $posts = Post::where('title', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
 //            $posts = Post::latest()->paginate($perPage);
             $keyword = 'landing_page';
             $type = 'landingPage';
             $posts = Post::where('category', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         }
 
         return view('posts.index', compact('posts','type'));
@@ -161,7 +161,8 @@ class PostsController extends Controller
                 abort(404);
         }
         if ($keyword !== '') {
-            $posts = $this->getAllLatestPost($keyword);
+            $perPage = 15;
+            $posts = $this->getAllLatestPost($keyword, $perPage);
         }
 //        foreach ($posts as $post)
 //        {
@@ -312,7 +313,8 @@ class PostsController extends Controller
         $recentPosts = [];
 
         if ($type === 'galleries'){
-            $posts = $this->getAllLatestPost($type);
+            $perPage = 9;
+            $posts = $this->getAllLatestPost($type, $perPage);
             foreach ($posts as $post) {
                 $images = $post->images;
                 if (!$images->isEmpty()) {
@@ -322,36 +324,47 @@ class PostsController extends Controller
         }
         elseif ($type === 'admission' || $type === 'courses' || $type === 'alumni' )
         {
-            $posts = $this->getAllLatestPost($type);
+            $perPage = 15;
+            $posts = $this->getAllRecentPost($type, $perPage);
         }
         else{
-            $recentPosts = $this->getRecentPosts($type);
             if ($type === 'about_us'){
-                $posts = $this->getFirstPost($type);
+                $post = $this->getFirstPost($type);
+                return redirect("/view/about_us/$post->id");
             }
             else {
-                $posts = $this->getLatestPost($type);
+                $perPage = 9;
+                $posts = $this->getAllLatestPost($type, $perPage);
             }
         }
 //        echo json_encode($type);
 //        echo json_encode($recentPosts);
 //        echo json_encode($posts);
-        return view("display.$view", compact('posts', 'recentPosts', 'type'));
+        return view("display.$view", compact('posts', 'type'));
     }
 
     public function displayPostWithLink($type, $id)
     {
-        $view = 'empty';
-        $view = $type === 'about_us' ? 'aboutUs' : $type;
+        $view = 'postWithGallery';
+        if ($type === 'about_us')
+        {
+            $view = 'aboutUs';
+        }
+        elseif ($type === 'notices'){
+            $view = 'postWithFiles';
+        }
+        elseif ($type === 'events'){
+            $view = 'eventContent';
+        }
 
         $recentPosts = $this->getRecentPosts($type);
         $posts = [$this->getPost($id)];
-
+        $postId = $id;
 //        echo json_encode($type);
 //        echo json_encode($recentPosts);
 //        echo json_encode($posts);
 
-        return view("display.$view", compact('posts', 'recentPosts', 'type'));
+        return view("display.$view", compact('posts', 'recentPosts', 'postId','type'));
     }
 
     private function getRecentPosts($type){
@@ -399,27 +412,26 @@ class PostsController extends Controller
             ->latest()->take(1)->get();
     }
 
-    private function getAllLatestPost($type)
+    private function getAllLatestPost($type, $perPage)
     {
-        if ($type === 'galleries') {
-            $perPage = 9;
-        }
-        else {
-            $perPage = 10;
-        }
+        $perPage = 9;
+//        if ($type === 'galleries') {
+//        }
+//        else {
+//            $perPage = 10;
+//        }
         $keyword = $type;
         return Post::where('category', "$keyword")
             ->latest()->simplePaginate($perPage);
     }
+
     private function getFirstPost($type)
     {
-        $perPage = 10;
         $keyword = $type;
-        return Post::where('category', "$keyword")->take(1)->get();
+        return Post::where('category', "$keyword")->first();
     }
-    private function getAllRecentPost($type)
+    private function getAllRecentPost($type, $perPage)
     {
-        $perPage = 10;
         $keyword = $type;
         return Post::where('category', "$keyword")
             ->simplePaginate($perPage);
@@ -437,8 +449,9 @@ class PostsController extends Controller
 
     public function displayGallery($id)
     {
+        $perPage = 9;
         $post = Post::findOrFail($id);
-        $images = $post->images;
+        $images = $post->images()->simplePaginate($perPage);
         $galleryName = $post->title;
 //        echo json_encode($images);
         $type = 'galleryImages';

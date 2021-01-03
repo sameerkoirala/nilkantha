@@ -20,7 +20,7 @@ class CreateMembersTable extends Migration
             $table->string('type')->default('other');
             $table->string('designation')->nullable();
             $table->string('education')->nullable();
-            $table->foreignId('department_id');
+            $table->foreignId('department_id')->nullable();
             $table->string('image_path')->nullable();
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();

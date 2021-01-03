@@ -34,9 +34,9 @@ class ImagesController extends Controller
 
         if (!empty($keyword)) {
             $images = Image::where('path', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
-            $images = Image::latest()->paginate($perPage);
+            $images = Image::latest()->simplePaginate($perPage);
         }
 
 
@@ -101,7 +101,7 @@ class ImagesController extends Controller
         $post_id = $id;
         $perPage = 25;
 
-        $images = $post->images()->paginate($perPage);
+        $images = $post->images()->simplePaginate($perPage);
 
         return view('images.index', compact('images','post_id'));
     }

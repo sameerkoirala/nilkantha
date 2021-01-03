@@ -28,13 +28,13 @@
         </div>
     @else
         @foreach($posts['carousel'] as $key => $value)
-            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                <img src="{{ url('/') . '/' . $value['path'] }}" alt="{{ $value['title'] }} " width="1300px" height="550px">
+            <div class="carousel-item overlaycarousel {{ $key === 0 ? 'active' : '' }}">
+                <img src="{{ url('/') . '/' . $value['path'] }}" alt="{{ $value['title'] }} " width="100%" height="auto">
             </div>
-        @endforeach
-    @endif
+    @endforeach
+@endif
 
-    <!-- Left and right controls -->
+<!-- Left and right controls -->
     <a class="carousel-control-prev" href="#demo" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
     </a>
@@ -72,11 +72,11 @@
 					<a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
 					<a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
                      @if( $posts['notices']->isEmpty() )--}}
-                        <a href="#"> Scholarship Notice</a>	&nbsp;&nbsp;
-                        <a href="#"> Result of Grade X</a>	&nbsp;&nbsp;
-                        <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
-                        <a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
-                        <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
+                    <a href="#"> Scholarship Notice</a>	&nbsp;&nbsp;
+                    <a href="#"> Result of Grade X</a>	&nbsp;&nbsp;
+                    <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
+                    <a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
+                    <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
                     @else
                         @foreach( $posts['notices'] as $notice )
                             <a href="{{ url('/') . '/view/notices/' . $notice['id'] }}">{{ $notice['title'] }}</a>&nbsp;&nbsp;
@@ -165,11 +165,11 @@
                     <div class="col-md-8 scroll-content">
                         <!-- <h3 id="text2">1:6</h3>
                         <div class="heading-underline"></div>   -->
-                    <div class="founder_message">
-                      <p class="lead text-left pl-5">{!!  substr($message['description'], 0, ( strlen($message['description']) > 521 ? 521 : strlen($message['description']) ) ) . '....' !!}
-                          <br><br><a href="{{ url('/') . '/view/aboutUs/' . $message['id'] }}" class="btn btn-outline-light">Read More</a>
-                      </p>
-                    </div>
+                        <div class="founder_message">
+                            <p class="lead text-left pl-5">{!!  substr($message['description'], 0, ( strlen($message['description']) > 521 ? 521 : strlen($message['description']) ) ) . '....' !!}
+                                <br><br><a href="{{ url('/') . '/view/aboutUs/' . $message['id'] }}" class="btn btn-outline-light">Read More</a>
+                            </p>
+                        </div>
                     </div>
 
                     @if( strlen($message['image_path']) > 0 )
@@ -230,70 +230,70 @@
                 </ol>
                 <div class="carousel-inner">
                     @if($posts['events']->isEmpty())--}}
-                        <div class="carousel-item active event-heading">
+                    <div class="carousel-item active event-heading">
 
-                            <h6>LPC Montly Meeting</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
-
-                            <hr>
-
-                            <h6>First Terminal Examination</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
-                            <hr>
-
-
+                        <h6>LPC Montly Meeting</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
                         </div>
-                        <div class="carousel-item">
 
-                            <h6>Weekly Test</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
+                        <hr>
 
-                            <hr>
-
-                            <h6>Orientation</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
-                            <hr>
+                        <h6>First Terminal Examination</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
                         </div>
-                        <div class="carousel-item">
+                        <hr>
 
-                            <h6>Weekly Test</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
 
-                            <hr>
+                    </div>
+                    <div class="carousel-item">
 
-                            <h6>Orientation</h6>
-                            <div class="eventContent">
-                                <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
-                                <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
-                                <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
-                            </div>
-                            <hr>
+                        <h6>Weekly Test</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
                         </div>
+
+                        <hr>
+
+                        <h6>Orientation</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="carousel-item">
+
+                        <h6>Weekly Test</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 8:15 am - 9:15 am</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Nov 20, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
+                        </div>
+
+                        <hr>
+
+                        <h6>Orientation</h6>
+                        <div class="eventContent">
+                            <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; 9:00 am - 12:00 pm</a><br>
+                            <a><span aria-hidden="true" class="far fa-calendar-minus" > </span> &nbsp; Dec 15, 2020</a><br>
+                            <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; Dhading, School Premesis</a>
+                        </div>
+                        <hr>
+                    </div>
                     @else
                         @foreach($posts['events'] as $key => $value)
                             @if( $key % 2 === 0)
                                 <div class="carousel-item {{ $key === 0 ? 'active' : '' }} event-heading">
-                            @endif
+                                    @endif
                                     <h6><a href="{{ url('/'). '/view/events/' . $value['id'] }}">{{ $value['title'] }}</a></h6>
                                     <div class="eventContent">
                                         <a><span aria-hidden="true" class="fas fa-clock" > </span> &nbsp; {{ $value['start_time'] . ' - ' . $value['end_time'] }}</a><br>
@@ -301,10 +301,10 @@
                                         <a><span aria-hidden="true" class="far fas fa-map-marker-alt" > </span> &nbsp; {{ $value['location'] }}</a>
                                     </div>
                                     <hr>
-                            @if( ($key + 1) % 2 === 0)
+                                    @if( ($key + 1) % 2 === 0)
                                 </div>
                             @endif
-                            @endforeach
+                        @endforeach
                     @endif
                 </div>
             </div>

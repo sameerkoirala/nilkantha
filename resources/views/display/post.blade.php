@@ -35,14 +35,19 @@
                     <h5 class="text-gray text-uppercase">{{ $post->title }}</h5>
                     <p></p>
 
-                    @if(isset($post->image_path))
-                        <td><img src=" {{ url("$post->image_path")}}" width="100%" height="200px"/></td>
+                    @if(!empty($post->image_path))
+                        <div class="img-wrapper" style="height: 200px;">
+                       ` <td><img src=" {{ url("$post->image_path")}}" width="100%" height="180px"/></td>
+
+                        </div>
                     @endif
+                    <p></p>
 
                     {!! $post->description !!}
+                    <p></p>
 
-                    @if(isset($post->file_path))
-                        <td><a href="{{ url("$post->file_path")}}">Download Files</a></td>
+                    @if(!empty($post->file_path))
+                        <button class="btn"><i class="fa fa-download"></i> {{ 'Download' }}</button>
                     @endif
 
                 @endforeach

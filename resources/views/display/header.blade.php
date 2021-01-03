@@ -11,5 +11,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script >
+
+        $(document).ready(function(){
+            $('.gallerys').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enabled: true
+                }
+            });
+
+        });
+        //navbar scroll effect
+        // $(window).scroll(function()
+        //       {
+        //
+        //         $('nav').toggleClass('scrolled',$(this).scrollTop()>50);
+        //       });
+
+
+    </script>
 </head>
 <body>

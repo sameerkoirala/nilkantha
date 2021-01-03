@@ -40,9 +40,9 @@ class MembersController extends Controller
                 ->orWhere('designation', 'LIKE', "%$keyword%")
                 ->orWhere('education', 'LIKE', "%$keyword%")
                 ->orWhere('department', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
-            $members = Member::latest()->paginate($perPage);
+            $members = Member::latest()->simplePaginate($perPage);
         }
         return view('members.index', compact('members',));
     }
@@ -174,17 +174,18 @@ class MembersController extends Controller
     }
 
     public function display($type) {
-        $perPage = 25;
+        $perPage = 10;
 
         switch ($type){
             case 'departments':
                 $type = 'Departments';
-                $departments = Department::select('id','name')->get();
+                $departments = Department::select('id','name')->simplePaginate($perPage);
                 $members = [];
                 return view('display.members', compact('members', 'departments',  'departments', 'type'));
             case 'managements':
                 $keyword = 'management';
                 $type = 'Managements';
+                $perPage = 9;
                 break;
             case 'others':
                 $keyword = 'other';
@@ -195,7 +196,7 @@ class MembersController extends Controller
                 abort(404);
         }
         $members = Member::where('type', "$keyword")
-            ->latest()->paginate($perPage);
+            ->latest()->simplePaginate($perPage);
 
         return view('display.members', compact('members','type'));
     }

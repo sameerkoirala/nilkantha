@@ -2,6 +2,6 @@
 
     @include('display.navbar')
 
-@include('display.postWithGallery')
+@include('display.postList')
 
 @include('display.footer')

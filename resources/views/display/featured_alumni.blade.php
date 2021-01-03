@@ -7,29 +7,13 @@
 
     <div class="container">
 
-        <h3 class="text-capitalize">{{ isset($type) ? $type : 'Alumni' }}</h3>
+        <h3 class="text-uppercase py-4">{{ 'Featured Alumni'   }}</h3>
 
 
         <div class="row">
 
             <!-- start of vertical side navbar -->
-            <div class="col-sm-3 vertical-nav bg-white " id="sidebar">
-
-                <p class="text-gray font-weight-bold  ">Related Links</p>
-
-                <ul class="nav flex-column bg-white mb-0">
-
-                    <li class="nav-item ">
-                        <a href="{{ url('/students/alumni') }}" class="nav-link text-dark bg-light current"><i class="fa fa-chevron-right mr-3 "></i>Featured Alumni </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a href="{{ url('/view/alumni') }}" class="nav-link text-dark bg-light "><i class="fa fa-chevron-right mr-3 "></i>Alumni List</a>
-                    </li>
-
-                </ul>
-
-            </div>
+            @include('display.academicsSidebar')
             <!-- end of vertical side navbar -->
 
 
@@ -37,7 +21,7 @@
             <div class="col-sm-9 page-content  " id="content">
 
                 <h5 class="text-gray text-uppercase ">Our Featured Alumni</h5>
-                <p > Some of the best performing ex-students of the school.  </p>
+{{--                <p > Some of the best performing ex-students of the school.  </p>--}}
 
                 @for ($index = 0; $index < sizeof($alumni); $index++)
                     @if( ($index) % 3 === 0)
@@ -62,6 +46,7 @@
 
             </div>
             <!-- end of page content -->
+            <div class="pagination-wrapper text-center"> {!! $alumni->render() !!} </div>
 
         </div>
 

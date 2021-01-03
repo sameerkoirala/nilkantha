@@ -154,15 +154,15 @@
             <h5 class="r-sub-title-b text-center">Follow us at:</h5>
 
             <div class="container text-center">
-                <a href="{{ $contact->facebook }}" target="_blank">
+                <a href="{{ $contact->facebookPage }}" target="_blank">
                     <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>
                 </a>
 
-                <a href="{{ $contact->facebook }}" target="_blank">
+                <a href="{{ $contact->instagramLink }}" target="_blank">
                     <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>
                 </a>
 
-                <a href="{{ $contact->facebook }}" target="_blank">
+                <a href="{{ $contact->youtubeLink }}" target="_blank">
                     <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>
                 </a>
             </div>

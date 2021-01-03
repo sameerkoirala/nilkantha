@@ -62,12 +62,12 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand" href="{{ url('/') }}" >
-                    @if(isset(Illuminate\Support\Facades\Config::get('configurations')->image_path))
+{{--                    @if(isset(Illuminate\Support\Facades\Config::get('configurations')->image_path))--}}
 
-                        <img class="rounded-circle z-depth-2" alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="200px" height="120px"/>
-                    @else
+{{--                        <img class="rounded-circle z-depth-2" alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="200px" height="120px"/>--}}
+{{--                    @else--}}
                         <strong>{{ Illuminate\Support\Facades\Config::get('configurations')->title ?? 'Nilkantha School '}}</strong>
-                    @endif
+{{--                    @endif--}}
                 </a>
 
                 <!-- Collapse -->
@@ -95,7 +95,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ url('/view/about_us') }}">Messages</a>
                                 <a class="dropdown-item" href="{{ url('/academics/managements') }}">Management</a>
-                                <a class="dropdown-item" href="{{ url('/academics/faculties') }}">Faculty Members</a>
+                                <a class="dropdown-item" href="{{ url('/academics/departments') }}">Faculty Departments</a>
                                 <a class="dropdown-item" href="{{ url('/academics/others') }}">Other Staffs</a>
                             </div>
 

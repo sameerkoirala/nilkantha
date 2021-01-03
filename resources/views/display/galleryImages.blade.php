@@ -8,7 +8,7 @@
 
     <div class="container">
 
-        <h3 class="text-uppercase py-5">{{ isset($galleryName) ? $galleryName : 'Image Gallery' }}</h3>
+        <h3 class="text-uppercase py-4">{{ isset($galleryName) ? $galleryName : 'Image Gallery' }}</h3>
         <ul class="page-breadcrumb">
             <li>
                 <i class="fa fa-home"></i>
@@ -20,14 +20,13 @@
         <div>
             @for ($index = 0; $index < sizeof($images); $index++)
                 @if( ($index) % 3 === 0)
-                    <div class="row">
+                    <div class="row gallerys">
                         @endif
                         <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
                             <div class="card">
-                                <img src="{{ url( '/' ) . '/' . $images[$index]->path }}" class="card-img img-fluid">
-                                <div class="card-body">
-                                    <a href="{{ url( '/' ) . '/' . $images[$index]->path }}"><h6 class="card-titlle text-center" >{{ $images[$index]->title }}</h6></a>
-                                </div>
+                                <a href="{{ url( '/' ) . '/' . $images[$index]->path }}">
+                                    <img src="{{ url( '/' ) . '/' . $images[$index]->path }}" class="card-img img-fluid">
+                                </a>
                             </div>
                         </div>
                         @if( ($index + 1) % 3 === 0)
@@ -35,7 +34,10 @@
                 @endif
             @endfor
         </div>
+        <br />
+        <div class="pagination-wrapper text-center"> {!! $images->render() !!} </div>
     </div>
 </section>
+
 
 @include('display.footer')

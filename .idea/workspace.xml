@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79cabe59-b1df-4965-b745-32acb78f95de" name="Default Changelist" comment="Updated landing Page get content">
+    <list default="true" id="79cabe59-b1df-4965-b745-32acb78f95de" name="Default Changelist" comment="Updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlumniController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_174443_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_16_174443_create_departments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_181949_create_alumnis_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_16_181949_create_alumnis_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MembersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MembersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_182124_create_members_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_16_182124_create_members_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_183025_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_16_183025_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_012501_create_contact_us_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_012501_create_contact_us_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_020100_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_020100_create_contacts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_024252_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_024252_create_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_024310_create_files_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_024310_create_files_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/admission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/admission.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/admissionSidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/academicsSidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/alumni.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/alumni.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/community.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/community.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/display/contactUs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/contactUs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/courses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/events.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/featured_alumni.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/featured_alumni.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/galleries.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/galleries.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/galleryImages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/galleryImages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/members.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/members.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/nccs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/nccs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/notices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/notices.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/postWithFiles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/postWithFiles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/display/postWithGallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/display/postWithGallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/members/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/members/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/members/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/members/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +172,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Nilkantha-Project" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -258,7 +278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609304532742</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated">
+      <created>1609690517844</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609690517844</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated">
+      <created>1609690552362</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609690552362</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +318,7 @@
     <MESSAGE value="Updated notification flash" />
     <MESSAGE value="Updated gallery Images View" />
     <MESSAGE value="Updated landing Page get content" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated landing Page get content" />
+    <MESSAGE value="Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated" />
   </component>
 </project>

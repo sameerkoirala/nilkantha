@@ -34,7 +34,7 @@ class DepartmentsController extends Controller
             $departments = Department::where('name', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $departments = Department::latest()->paginate($perPage);
+            $departments = Department::latest()->simplePaginate($perPage);
         }
 
         return view('departments.index', compact('departments'));
@@ -134,9 +134,9 @@ class DepartmentsController extends Controller
 //        echo json_encode($department);
 //        $department = Department::findOrFail($department->id);
         $members = [];
-        if ( isset($department))
+        if ( !empty($department))
         {
-            $members = $department->members;
+            $members = $department->members()->simplePaginate(10);
 //            echo json_encode($department);
         }
 //        echo json_encode($members);

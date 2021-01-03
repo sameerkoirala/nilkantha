@@ -6,9 +6,7 @@
     <section class="academics">
 
         <div class="container">
-
-            <h3 class="text-capitalize">{{ isset($type) ? $type : 'Management' }}</h3>
-
+            <h3 class="text-uppercase py-4">{{ isset($type) ? $type : 'Management' }}</h3>
 
             <div class="row">
 
@@ -17,7 +15,7 @@
             <!-- end of vertical side navbar -->
 
                 <!-- Page content - profile of few best performing ex-students  -->
-                <div class="col-sm-9 page-content  " id="content">
+                <div class="col-sm-8 page-content  " id="content">
                     @for ($index = 0; $index < sizeof($members); $index++)
                         @if( ($index) % 3 === 0)
                             <div class="row">
@@ -39,6 +37,8 @@
                     @endfor
 
                 </div>
+                <div class="pagination-wrapper text-center"> {!! $members->render() !!} </div>
+
                 <!-- end of page content -->
 
             </div>
@@ -51,34 +51,42 @@
 
         <div class="container">
 
-            <h3 class="text-uppercase py-4">{{ $type }}</h3>
+            <h3 class="text-uppercase py-4">{{ isset($type) ? $type : 'Departments' }}</h3>
 
             <div class="row">
 
                 <!-- start of vertical side navbar -->
             @include('members._sidebar')
             <!-- end of vertical side navbar -->
+
                 <!-- middle space between side navbar and table -->
-            {{--            <div class="col-sm-1"></div>--}}
+                <div class="col-sm-1"></div>
 
-            <!-- Page content - nepali department  -->
-                <div class="col-sm-7 page-content  " id="content">
+                <!-- Page content - nepali department  -->
+                <div class="col-sm-8 page-content  " id="content">
                     <p class="py-4">Departments List</p>
-                    {{--                    <!-- start of faculty members table -->--}}
 
+
+                {{--                <p class="py-4"> Please download the admission form for the respective grades and submit to the school with specified documents. The last day for form submission is December 30,2020 </p>--}}
+
+                <!-- start of Department table -->
                     <table class="table">
                         <tbody>
 
                         @foreach($departments as $department)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+{{--                                <td></td>--}}
+{{--                                <td></td>--}}
                                 <td><a href="{{ url('/academics/faculty') . '/' . $department->name  }}" class="text-dark ">{{ ucfirst($department->name) . ' Department' }} </a></td>
                             </tr>
                         @endforeach
 
                         </tbody>
                     </table>
+
                 </div>
+                <div class="pagination-wrapper text-center"> {!! $departments->render() !!} </div>
 
             </div>
 
@@ -90,7 +98,7 @@
 
         <div class="container">
 
-            <h3 class="text-uppercase py-4">{{ $type }}</h3>
+            <h3 class="text-uppercase py-4">{{ $type  }}</h3>
 
             <div class="row">
 
@@ -98,10 +106,10 @@
             @include('members._sidebar')
             <!-- end of vertical side navbar -->
                 <!-- middle space between side navbar and table -->
-            {{--            <div class="col-sm-1"></div>--}}
+                        <div class="col-sm-1"></div>
 
-            <!-- Page content - nepali department  -->
-                <div class="col-sm-7 page-content  " id="content">
+            <!-- Page content -  member list  -->
+                <div class="col-sm-8 page-content  " id="content">
                     @if(isset($department))
                         <ul class="page-breadcrumb">
                             <li>
@@ -111,10 +119,10 @@
                                 <a href="{{url("/academics/departments")}}">Departments</a>
                             </li>
                         </ul>
-                        <h5 class="text-gray text-uppercase">{{ strtoupper($department) . ' DEPARTMENT' }}</h5>
-                        <p class="py-4">{{ $type }} List</p>
-                @endif
-                <!-- start of faculty members table -->
+                        <h5 class="text-gray">{{ $department . ' Department Faculty List' }}</h5>
+                        <br />
+                    @endif
+                    <!-- start of  members table -->
                     <table class="table">
                         <tbody>
 
@@ -133,6 +141,7 @@
                     </table>
 
                 </div>
+                <div class="pagination-wrapper text-center"> {!! $members->render() !!} </div>
 
             </div>
 

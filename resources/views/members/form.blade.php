@@ -25,7 +25,7 @@
 <div id="designation" class="form-group {{ $errors->has('designation') ? 'has-error' : ''}}">
     <label for="designation" class="control-label">{{ 'Designation' }}</label>
     <input class="form-control" name="designation" type="text" id="designation" value="{{ old('designation', isset($member->designation) ? $member->designation : '') }}" >
-    {!! $errors->first('designation', '<p class="help-block">:message</p>') !!}'education',
+    {!! $errors->first('designation', '<p class="help-block">:message</p>') !!}
 </div>
 <div id="education" class="form-group {{ $errors->has('education') ? 'has-error' : ''}}">
     <label for="education" class="control-label">{{ 'Education' }}</label>

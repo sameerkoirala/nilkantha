@@ -37,9 +37,9 @@ class AlumniController extends Controller
                 ->orWhere('batch', 'LIKE', "%$keyword%")
                 ->orWhere('current_involvement', 'LIKE', "%$keyword%")
                 ->orWhere('description', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->simplePaginate($perPage);
         } else {
-            $alumni = Alumnus::latest()->paginate($perPage);
+            $alumni = Alumnus::latest()->simplePaginate($perPage);
         }
 
         return view('alumni.index', compact('alumni'));
@@ -190,7 +190,7 @@ class AlumniController extends Controller
         $perPage = 9;
 
         $type = 'Alumni';
-        $alumni = Alumnus::paginate($perPage);
+        $alumni = Alumnus::simplePaginate($perPage);
 //        echo json_encode($alumni[0]);
         return view('display.featured_alumni', compact('alumni', 'type'));
     }

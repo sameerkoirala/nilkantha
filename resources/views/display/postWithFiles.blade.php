@@ -1,3 +1,6 @@
+@include('display.header')
+@include('display.navbar')
+
 
 <section class="academics">
 
@@ -16,7 +19,7 @@
 
                     @foreach($recentPosts as $post)
                         <li class="nav-item ">
-                            <a href="{{ url('/posts') . '/' . $type . '/' . $post['id']}}" class="nav-link text-dark current "><i class="fa fa-chevron-right mr-3 "></i>{{ $post['title'] }}</a>
+                            <a href="{{ url('/posts') . '/' . $type . '/' . $post['id']}}" class="nav-link text-dark bg-light {{ $postId == $post['id'] ? 'current' : ''}} "><i class="fa fa-chevron-right mr-3 "></i>{{ $post['title'] }}</a>
                         </li>
                     @endforeach
 
@@ -48,7 +51,7 @@
 
                                 <tr>
                                     <td>{{ $file->title }}</td>
-                                    <td><a href="{{ url($file->path) }}" target="_blank">Download</a></td>
+                                    <td class="btn"><i class="fa fa-download"></i> <a href="{{ url($file->path) }}" target="_blank">Download</a></td>
                                 </tr>
 
                             @endforeach
@@ -64,3 +67,5 @@
     </div>
 
 </section>
+
+@include('display.footer')
