@@ -232,6 +232,11 @@ body{
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+.founder_message p
+{
+  text-align: left !important;
+}
+
 /*-------------Scrolling Sectiion Ends-------------------*/
 
 /*-------------hapennings starts--------*/
