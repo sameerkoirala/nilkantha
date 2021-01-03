@@ -16,13 +16,13 @@
     <!-- The slideshow -->
     @if( $posts['carousel']->isEmpty() )
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item overlaycarousel active">
                 <img src="img/testb.jpg" alt="Los Angeles">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item overlaycarousel">
                 <img src="img/testc.jpg" alt="Chicago">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item overlaycarousel">
                 <img src="img/testb.jpg" alt="New York">
             </div>
         </div>
