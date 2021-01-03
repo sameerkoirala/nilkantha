@@ -97,7 +97,7 @@
 
 
 <!-- Scholarship Gallery and Contact Section Start-->
-<div class="container-fluid size size_a">
+<div class="container size size_a">
     <div class="row">
         <div class="col-12 narrow mb-4 nil_starts">
             <div class="row">
