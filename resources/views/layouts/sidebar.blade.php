@@ -1,15 +1,19 @@
 <div class="col-md-3">
     <div class="card">
         <div class="card-header">
-Sidebar
+            Sidebar
         </div>
 
         <div class="card-body">
             <ul class="nav" role="tablist">
                 <li role="presentation">
                     <br />
+                    <a href="{{ url('/posts/changePassword') }}">
+                        Change Password
+                    </a>
+                    <br />
                     <a href="{{ url('/posts') }}">
-                        Configuration
+                        Logo Configuration
                     </a>
                     <br />
                     <a href="{{ url('/posts/aboutUs') }}">

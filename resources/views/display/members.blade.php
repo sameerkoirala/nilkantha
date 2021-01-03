@@ -46,6 +46,45 @@
         </div>
 
     </section>
+@elseif( $type === 'Departments')
+    <section class="academics">
+
+        <div class="container">
+
+            <h3 class="text-uppercase py-4">{{ $type }}</h3>
+
+            <div class="row">
+
+                <!-- start of vertical side navbar -->
+            @include('members._sidebar')
+            <!-- end of vertical side navbar -->
+                <!-- middle space between side navbar and table -->
+            {{--            <div class="col-sm-1"></div>--}}
+
+            <!-- Page content - nepali department  -->
+                <div class="col-sm-7 page-content  " id="content">
+                    <p class="py-4">Departments List</p>
+                    {{--                    <!-- start of faculty members table -->--}}
+
+                    <table class="table">
+                        <tbody>
+
+                        @foreach($departments as $department)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td><a href="{{ url('/academics/faculty') . '/' . $department->name  }}" class="text-dark ">{{ ucfirst($department->name) . ' Department' }} </a></td>
+                            </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 @else
     <section class="academics">
 
@@ -56,18 +95,26 @@
             <div class="row">
 
                 <!-- start of vertical side navbar -->
-                @include('members._sidebar')
-                <!-- end of vertical side navbar -->
+            @include('members._sidebar')
+            <!-- end of vertical side navbar -->
                 <!-- middle space between side navbar and table -->
-    {{--            <div class="col-sm-1"></div>--}}
+            {{--            <div class="col-sm-1"></div>--}}
 
-                <!-- Page content - nepali department  -->
+            <!-- Page content - nepali department  -->
                 <div class="col-sm-7 page-content  " id="content">
                     @if(isset($department))
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="{{url("/")}}">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                                <a href="{{url("/academics/departments")}}">Departments</a>
+                            </li>
+                        </ul>
                         <h5 class="text-gray text-uppercase">{{ strtoupper($department) . ' DEPARTMENT' }}</h5>
-                    @endif
                         <p class="py-4">{{ $type }} List</p>
-                        <!-- start of faculty members table -->
+                @endif
+                <!-- start of faculty members table -->
                     <table class="table">
                         <tbody>
 

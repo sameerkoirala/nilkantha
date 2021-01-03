@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -87,5 +90,33 @@ class HomeController extends Controller
 //            echo 'Po';
             return redirect("/view/$type/$id");
         }
+    }
+
+    public function changePassword(Request $request)
+    {
+        $validateData = $request->validate([
+            'email' => ['bail', 'required', 'email'],
+            'password' => ['bail', 'required', 'min:8'],
+            'password_confirmation' => ['bail', 'required', 'min:8'],
+        ]);
+
+        $password = $request->get('password');
+        $confirmedPassword = $request->get('password_confirmation');
+        $email = $request->get('email');
+
+        if ($password === $confirmedPassword){
+            echo 'here';
+            $user = User::where('email',$email)->first();
+
+            $user->password = Hash::make($password);
+            $user->update();
+            $message = 'Password Sucessfully Updated';
+            return redirect('/posts')->with('flash_message', $message);
+        }
+        else {
+            $message = 'Password mismatch';
+            return redirect('/posts/changePassword')->withErrors(['password' => $message]);
+        }
+
     }
 }

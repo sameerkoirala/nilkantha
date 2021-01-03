@@ -9,6 +9,14 @@
     <div class="container">
 
         <h3 class="text-uppercase py-5">{{ isset($galleryName) ? $galleryName : 'Image Gallery' }}</h3>
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="{{url("/")}}">Home</a>
+                <i class="fa fa-angle-right"></i>
+                <a href="{{url("/view/galleries")}}">Galleries</a>
+            </li>
+        </ul>
         <div>
             @for ($index = 0; $index < sizeof($images); $index++)
                 @if( ($index) % 3 === 0)

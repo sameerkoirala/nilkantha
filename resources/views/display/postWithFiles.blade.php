@@ -42,19 +42,18 @@
                     {!! $post->description !!}
 
                     @if(sizeof($post->files) > 0)
-                        @for ($index = 0; $index < sizeof($post->files); $index++)
-                            @if( $index % 3 === 0)
-                                <div class="row">
-                                    @endif
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
-                                        <div class="card">
-                                            <a href="#"><img src="{{ url($post->files[$index]->path) }}" class="card-img img-fluid"></a>
-                                        </div>
-                                    </div>
-                                    @if( ($index + 1) % 3 === 0)
-                                </div>
-                            @endif
-                        @endfor
+                        <table class="table">
+                            <tbody>
+                            @foreach ($post->files as $file)
+
+                                <tr>
+                                    <td>{{ $file->title }}</td>
+                                    <td><a href="{{ url($file->path) }}" target="_blank">Download</a></td>
+                                </tr>
+
+                            @endforeach
+                            </tbody>
+                        </table>
 
                     @endif
                 @endforeach

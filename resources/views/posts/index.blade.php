@@ -26,6 +26,9 @@
 {{--                        <br/>--}}
 {{--                        <br/>--}}
                         @switch($type ?? '')
+                            @case('changePassword')
+                                @include('posts.resetPassword')
+                                @break
                             @case('landingPage')
                                 @include('posts.landingpage')
                                 @break

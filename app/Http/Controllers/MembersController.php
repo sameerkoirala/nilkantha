@@ -177,18 +177,11 @@ class MembersController extends Controller
         $perPage = 25;
 
         switch ($type){
-            case 'faculties':
-                $keyword = 'faculty';
-                $type = 'Faculties';
+            case 'departments':
+                $type = 'Departments';
                 $departments = Department::select('id','name')->get();
-                $department = '';
                 $members = [];
-                if ( isset($departments[0]->members))
-                {
-                    $members = $departments[0]->members;
-                    $department = $departments[0]->name;
-                }
-                return view('display.members', compact('members', 'department',  'departments', 'type'));
+                return view('display.members', compact('members', 'departments',  'departments', 'type'));
             case 'managements':
                 $keyword = 'management';
                 $type = 'Managements';

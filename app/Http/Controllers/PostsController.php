@@ -108,7 +108,11 @@ class PostsController extends Controller
     {
 
         $keyword = '';
+        $posts = [];
         switch ($id){
+            case 'changePassword':
+                $type = 'changePassword';
+                break;
             case 'landingPage':
                 $keyword = 'landing_page';
                 $type = 'landingPage';
@@ -156,8 +160,9 @@ class PostsController extends Controller
             default:
                 abort(404);
         }
-        $posts = $this->getAllLatestPost($keyword);
-
+        if ($keyword !== '') {
+            $posts = $this->getAllLatestPost($keyword);
+        }
 //        foreach ($posts as $post)
 //        {
 //            if (!empty($post->image_path))

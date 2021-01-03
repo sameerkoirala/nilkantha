@@ -18,6 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'landingPage'])->na
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home/changePassword', [App\Http\Controllers\HomeController::class, 'changePassword'])->name('changePassword');
 
 Route::resource('posts', App\Http\Controllers\PostsController::class);
 
