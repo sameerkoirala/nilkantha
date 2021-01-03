@@ -3,9 +3,9 @@
 <footer class="footer abtUsFooter" >
 
     <!-- top footer starts: navigation links and contact  -->
-    <div class="container " >
+    <div class="container-fluid">
 
-        <div class="row">
+        <div class="row footer_content">
 
             <div class="col-sm-12 col-md-6  ">
                 <h4 >Nilkantha School</h4>
@@ -43,9 +43,9 @@
 
 
     <!-- start of bottom part of the footer -->
-    <div class="container" >
+    <div class="container-fluid" >
 
-        <div class="row">
+        <div class="row footer_content">
 
             <div class="col-md-8 col-sm-6 col-xs-12 " >
                 <p class="copyright-text">Copyright &copy; 2020 Nilkantha School, All Rights Reserved</p>
