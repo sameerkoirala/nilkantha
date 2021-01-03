@@ -165,9 +165,11 @@
                     <div class="col-md-8 scroll-content">
                         <!-- <h3 id="text2">1:6</h3>
                         <div class="heading-underline"></div>   -->
-                        <p class="lead text-left pl-5">{!!  substr($message['description'], 0, ( strlen($message['description']) > 521 ? 521 : strlen($message['description']) ) ) . '....' !!}
-                            <br><br><a href="{{ url('/') . '/view/aboutUs/' . $message['id'] }}" class="btn btn-outline-light">Read More</a>
-                        </p>
+                    <div class="founder_message">
+                      <p class="lead text-left pl-5">{!!  substr($message['description'], 0, ( strlen($message['description']) > 521 ? 521 : strlen($message['description']) ) ) . '....' !!}
+                          <br><br><a href="{{ url('/') . '/view/aboutUs/' . $message['id'] }}" class="btn btn-outline-light">Read More</a>
+                      </p>
+                    </div>
                     </div>
 
                     @if( strlen($message['image_path']) > 0 )
