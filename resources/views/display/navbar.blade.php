@@ -13,19 +13,19 @@
                     <li class="list-inline-item" >
                         <a href="#" style="color: white">
                             <span aria-hidden="true" class="fas fa-phone fa-sm" ></span>
-                            {{ isset(Illuminate\Support\Facades\Config::get('contact')->phone) ? Illuminate\Support\Facades\Config::get('contact')->phone : '01-2038382' }}
+                            {{ !empty(Illuminate\Support\Facades\Config::get('contact')->phone) ? Illuminate\Support\Facades\Config::get('contact')->phone : '01-2038382' }}
                         </a>
                     </li>
                     <li class="list-inline-item" >
                         <a href="#" style="color: white">
                             <span aria-hidden="true" class="far fa-envelope fa-sm" ></span>
-                            {{ isset(Illuminate\Support\Facades\Config::get('contact')->email) ? Illuminate\Support\Facades\Config::get('contact')->email : 'info@nilkantha.com' }}
+                            {{ !empty(Illuminate\Support\Facades\Config::get('contact')->email) ? Illuminate\Support\Facades\Config::get('contact')->email : 'info@nilkantha.com' }}
                         </a>
                     </li>
                     <li class="list-inline-item" >
                         <a href="#" style="color: white">
                             <span aria-hidden="true" class="fas fa-map-marker-alt fa-sm" ></span>
-                            {{ isset(Illuminate\Support\Facades\Config::get('contact')->address) ? Illuminate\Support\Facades\Config::get('contact')->address : 'Nilkantha, Dhading, Nepal' }}
+                            {{ !empty(Illuminate\Support\Facades\Config::get('contact')->address) ? Illuminate\Support\Facades\Config::get('contact')->address : 'Nilkantha, Dhading, Nepal' }}
                         </a>
                     </li>
                 </ul>
@@ -94,33 +94,21 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ url('/view/about_us') }}">Messages</a>
-                                <a class="dropdown-item" href="{{ url('/academics/managements') }}">Management</a>
-                                <a class="dropdown-item" href="{{ url('/academics/departments') }}">Faculty Departments</a>
+                                <a class="dropdown-item" href="{{ url('/academics/managements') }}">Managements</a>
+                                <a class="dropdown-item" href="{{ url('/academics/departments') }}">Faculties</a>
                                 <a class="dropdown-item" href="{{ url('/academics/others') }}">Other Staffs</a>
                             </div>
 
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Academics
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{ url('/view/courses') }}">Courses</a>
-                                <a class="dropdown-item" href="{{ url('/students/alumni') }}">Alumni</a>
-                                <a class="dropdown-item" href="{{ url('/view/alumni') }}">Students</a>
-                            </div>
-
-                        </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/view/admission') }}">Admission</a>
+                            <a class="nav-link" href="{{ url('/view/courses') }}">Courses</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                News & Notices
+                                News & Events
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -137,14 +125,29 @@
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ url('/view/community') }}">Community</a>
-                                <a class="dropdown-item" href="{{ url('/view/nccs') }}">NCCS Description</a>
+                                <a class="dropdown-item" href="{{ url('/view/nccs') }}">NCCS</a>
                             </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Alumni
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ url('/students/alumni') }}">Featured Alumni</a>
+                                <a class="dropdown-item" href="{{ url('/view/alumni') }}">Alumni List</a>
+                            </div>
+
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/view/galleries') }}">Gallery</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/view/admission') }}">Admission</a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/contacts') }}">Contact</a>

@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*',function ($view){
             $configurations = Post::select('id','title','image_path')->firstWhere('category', "landing_page");
-            $contact = Contact::select('address','phone','email')->first();
+            $contact = Contact::select('address','phone','email','facebookPage','youtubeLink')->first();
             Config::set('configurations', $configurations);
             Config::set('contact', $contact);
         });

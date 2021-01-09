@@ -6,21 +6,25 @@
 <section class="alumni">
 
     <div class="container">
-
+        <ul class="nav page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="{{url("/")}}">Home</a>
+            </li>
+        </ul>
         <h3 class="text-uppercase py-4">{{ 'Featured Alumni'   }}</h3>
 
 
         <div class="row">
 
             <!-- start of vertical side navbar -->
-            @include('display.academicsSidebar')
+            @include('display.alumniSidebar')
             <!-- end of vertical side navbar -->
 
 
             <!-- Page content - profile of few best performing ex-students  -->
             <div class="col-sm-9 page-content  " id="content">
 
-                <h5 class="text-gray text-uppercase ">Our Featured Alumni</h5>
 {{--                <p > Some of the best performing ex-students of the school.  </p>--}}
 
                 @for ($index = 0; $index < sizeof($alumni); $index++)

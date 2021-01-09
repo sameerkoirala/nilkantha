@@ -324,7 +324,7 @@ class PostsController extends Controller
         }
         elseif ($type === 'admission' || $type === 'courses' || $type === 'alumni' )
         {
-            $perPage = 15;
+            $perPage = 10;
             $posts = $this->getAllRecentPost($type, $perPage);
         }
         else{
@@ -370,7 +370,7 @@ class PostsController extends Controller
     private function getRecentPosts($type){
         if ($type === 'about_us')
         {
-            $posts = $this->getFirst10Posts($type);
+            $posts = $this->getAllRecentPost($type, '20');
         }
         else
         {
@@ -398,19 +398,19 @@ class PostsController extends Controller
             ->latest()->take(10)->get();
     }
 
-    private function getFirst10Posts($type)
-    {
-        $keyword = $type;
-        return Post::where('category', "$keyword")
-            ->take(10)->get();
-    }
+//    private function getFirst10Posts($type)
+//    {
+//        $keyword = $type;
+//        return Post::where('category', "$keyword")
+//            ->take(10)->get();
+//    }
 
-    private function getLatestPost($type)
-    {
-        $keyword = $type;
-        return Post::where('category', "$keyword")
-            ->latest()->take(1)->get();
-    }
+//    private function getLatestPost($type)
+//    {
+//        $keyword = $type;
+//        return Post::where('category', "$keyword")
+//            ->latest()->take(1)->get();
+//    }
 
     private function getAllLatestPost($type, $perPage)
     {

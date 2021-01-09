@@ -10,12 +10,10 @@
             <!-- start of vertical side navbar -->
             <div class="col-sm-3 vertical-nav bg-white " id="sidebar">
 
-                <p class="text-gray font-weight-bold  ">Related Links</p>
-
                 <ul class="nav flex-column bg-white mb-0">
                     @foreach($recentPosts as $post)
-                        <li class="nav-item ">
-                            <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark bg-light {{ $postId == $post['id'] ? 'current' : ''}} "><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
+                        <li class="nav-item {{ $postId == $post['id'] ? 'sidebar-active' : ''}}">
+                            <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark bg-light"><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
                         </li>
                     @endforeach
 
@@ -36,7 +34,7 @@
 
                     <p></p>
                     @if(isset($post->image_path))
-                        <td><img src=" {{ url($post->image_path)}}" width="100%" height="200px"/></td>
+                        <td style="height: 300px !important; overflow: hidden;"><img src=" {{ url($post->image_path)}}" width="100%"/></td>
                     @endif
                     <table class="table">
                         <tbody>

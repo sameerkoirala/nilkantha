@@ -13,16 +13,20 @@
             </div>
 
             <div class="col-6 col-md-3 mb-4 mx-auto ">
-                <h6  >Navigation Links</h6>
+                <h6  >Common Links</h6>
                 <ul class="footer-links  ">
                     <li ><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/view/aboutUs') }}">About us</a></li>
-                    <li><a href="{{ url('/view/courses') }}">Academics</a></li>
+                    <li><a href="{{ url('/view/about_us') }}">About Us</a></li>
+                    <li><a href="{{ url('/view/courses') }}">Courses</a></li>
+                    <li><a href="{{ url('/view/news') }}">News</a></li>
+                    <li><a href="{{ url('/view/events') }}">Events</a></li>
+                    <li><a href="{{ url('/view/notices') }}">Notices</a></li>
+                    <li><a href="{{ url('/view/community') }}">Community</a></li>
+                    <li><a href="{{ url('/view/nccs') }}">NCCS</a></li>
+                    <li><a href="{{ url('/students/alumni') }}">Alumni</a></li>
                     <li><a href="{{ url('/view/admission') }}">Admission</a></li>
-                    <li><a href="{{ url('/view/courses') }}">Notice</a></li>
-                    <li><a href="{{ url('/view/community') }}">Articles</a></li>
                     <li><a href="{{ url('/view/galleries') }}">Gallery</a></li>
-                    <li><a href="{{ url('/contacts') }}">Contact</a></li>
+                    <li><a href="{{ url('/contacts') }}">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -53,8 +57,12 @@
 
             <div class="col-md-4 col-sm-6 col-12 inline ">
                 <ul class="social-icons ">
-                    <li ><a class="facebook" href="#"><i class="fab fa-facebook-f "></i></a></li>
-                    <li ><a class="youtube" href="#"><i class="fab fa-youtube "></i></a></li>
+                    <li ><a class="facebook"
+                            href="{{ !empty(Illuminate\Support\Facades\Config::get('contact')->facebookPage) ? Illuminate\Support\Facades\Config::get('contact')->facebookPage : 'https://www.facebook.com/' }}">
+                            <i class="fab fa-facebook-f "></i></a></li>
+                    <li ><a class="youtube"
+                            href="{{ !empty(Illuminate\Support\Facades\Config::get('contact')->youtubeLink) ? Illuminate\Support\Facades\Config::get('contact')->youtubeLink : 'https://www.youtube.com/' }}">
+                            <i class="fab fa-youtube "></i></a></li>
                 </ul>
             </div>
 
@@ -64,19 +72,6 @@
     <!--  end of bottom part of footer -->
 
 </footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
-<script>
-    $(window).scroll(function()
-    {
-
-        $('nav').toggleClass('scrolled',$(this).scrollTop()>50);
-    });
-</script>
 
 </body>
 </html>

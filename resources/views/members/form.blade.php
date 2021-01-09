@@ -24,18 +24,18 @@
 </div>
 <div id="designation" class="form-group {{ $errors->has('designation') ? 'has-error' : ''}}">
     <label for="designation" class="control-label">{{ 'Designation' }}</label>
-    <input class="form-control" name="designation" type="text" id="designation" value="{{ old('designation', isset($member->designation) ? $member->designation : '') }}" >
+    <input class="form-control" name="designation" type="text" id="designation_input" value="{{ old('designation', isset($member->designation) ? $member->designation : '') }}" >
     {!! $errors->first('designation', '<p class="help-block">:message</p>') !!}
 </div>
 <div id="education" class="form-group {{ $errors->has('education') ? 'has-error' : ''}}">
     <label for="education" class="control-label">{{ 'Education' }}</label>
-    <input class="form-control" name="education" type="text" id="education" value="{{ old('education', isset($member->education) ? $member->education : '') }}" >
+    <input class="form-control" name="education" type="text" id="education_input" value="{{ old('education', isset($member->education) ? $member->education : '') }}" >
     {!! $errors->first('education', '<p class="help-block">:message</p>') !!}
 </div>
 <div id="department" class="form-group {{ $errors->has('department') ? 'has-error' : ''}}">
     <label for="department" class="control-label">{{ 'Department' }}</label>
     @if( sizeof($departments) > 0 )
-        <select id="department_id" name="department_id" class="form-control" id="department_id" {{ isset($member->type) ? ( $member->type === 'faculty' ? 'required' : '' ) : ''}}>
+        <select id="department_id" name="department_id" class="form-control" {{ isset($member->type) ? ( $member->type === 'faculty' ? 'required' : '' ) : ''}}>
             @foreach ($departments as $key => $value)
                 <option value="{{ $key }}" {{ isset($selectedID) ? ( ( $key == $selectedID ?? '') ? 'selected' : '') : '' }}>
                     {{ $value }}

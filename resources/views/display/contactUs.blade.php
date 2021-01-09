@@ -108,36 +108,6 @@
 </section>
 <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-5">
-        <form method="POST" action="{{ url('/contacts/sendMail') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-            {{ csrf_field() }}
-
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label> Name </label>
-                        <input type="text" class="form-control" name="name" placeholder="Name">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label> Email </label>
-                        <input type="email" class="form-control" name="email" placeholder="Email">
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label> Message </label>
-                        <textarea class="form-control" name="message" rows="5" placeholder="Enter your query"></textarea>
-                    </div>
-                </div>
-            </div>
-            <input type="submit" class="btn btn-primary" value="Submit">
-        </form>
-    </div>
     <div class="col-md-4">
         @if($contact->exists)
             <div class="container-fluid">
@@ -151,21 +121,21 @@
                 </div>
             </div>
 
-            <h5 class="r-sub-title-b text-center">Follow us at:</h5>
+{{--            <h5 class="r-sub-title-b text-center">Follow us at:</h5>--}}
 
-            <div class="container text-center">
-                <a href="{{ $contact->facebookPage }}" target="_blank">
-                    <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>
-                </a>
+{{--            <div class="container text-center">--}}
+{{--                <a href="{{ $contact->facebookPage }}" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
 
-                <a href="{{ $contact->instagramLink }}" target="_blank">
-                    <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>
-                </a>
+{{--                <a href="{{ $contact->instagramLink }}" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
 
-                <a href="{{ $contact->youtubeLink }}" target="_blank">
-                    <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>
-                </a>
-            </div>
+{{--                <a href="{{ $contact->youtubeLink }}" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
+{{--            </div>--}}
         @else
             <div class="container-fluid">
                 <div class="row">
@@ -178,21 +148,21 @@
                 </div>
             </div>
 
-            <h5 class="r-sub-title-b text-center">Follow us at:</h5>
+{{--            <h5 class="r-sub-title-b text-center">Follow us at:</h5>--}}
 
-            <div class="container text-center">
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>
-                </a>
+{{--            <div class="container text-center">--}}
+{{--                <a href="https://www.facebook.com/" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
 
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>
-                </a>
+{{--                <a href="https://www.facebook.com/" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
 
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>
-                </a>
-            </div>
+{{--                <a href="https://www.facebook.com/" target="_blank">--}}
+{{--                    <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>--}}
+{{--                </a>--}}
+{{--            </div>--}}
         @endif
     </div>
     <div class="col-md-1"></div>

@@ -101,20 +101,28 @@
     <div class="row">
         <div class="col-12 narrow mb-4 nil_starts">
             <div class="row">
-                <div class="col-md-4  ">
-                    <a href="{{ url('/') . '/view/admission' }}" class="btn btn-success lesson-box shadow p-4 mb-5  rounded ">
+                <div class="col-md-3  ">
+                    <a href="{{ url('/') . '/view/courses' }}" class="btn btn-success lesson-box shadow p-4 mb-5  rounded ">
                         <span class="far fa-file-alt nil_icon" ></span>
-                        <p class="lead">Admission</p>
+                        <p class="lead">Academics</p>
                     </a>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a href="{{ url('/') . '/view/galleries' }}" class="btn btn-info lesson-box shadow p-4 mb-5  rounded">
                         <span aria-hidden="true" class="far fa-images nil_icon" ></span>
                         <p class="lead">Gallery</p>
                     </a>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-md-3">
+                    <a href="{{ url('/') . '/view/news' }}" class="btn btn-info lesson-box shadow p-4 mb-5  rounded">
+                        <span aria-hidden="true" class="far fa-images nil_icon" ></span>
+                        <p class="lead">News & Events</p>
+                    </a>
+                </div>
+
+                <div class="col-md-3">
                     <a href="{{ url('/') . '/contacts' }}" class="btn btn-primary lesson-box shadow p-4 mb-5  rounded">
                         <span aria-hidden="true" class="fas fa-phone nil_icon" ></span>
                         <p class="lead">Contact</p>

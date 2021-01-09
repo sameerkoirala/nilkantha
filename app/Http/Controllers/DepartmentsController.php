@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
 use App\Models\Department;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class DepartmentsController extends Controller
@@ -142,8 +143,16 @@ class DepartmentsController extends Controller
 //        echo json_encode($members);
         $departments = Department::select('id','name')->get();
         $department = $department->name;
-        $type = 'Faculties';
+        $type = 'faculties';
+        $recentPosts = $this->getRecentPosts('about_us');
+        $posts = [$recentPosts[0]->id];
 //
-        return view('display.members', compact('members','department', 'departments', 'type'));
+        return view('display.members', compact('members', 'recentPosts', 'posts', 'department', 'departments', 'type'));
+    }
+
+    public function getRecentPosts($type)
+    {
+        $keyword = $type;
+        return Post::where('category', "$keyword")->get();
     }
 }

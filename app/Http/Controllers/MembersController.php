@@ -175,30 +175,38 @@ class MembersController extends Controller
 
     public function display($type) {
         $perPage = 10;
-
+        $recentPosts = $this->getRecentPosts('about_us');
+        $posts = [$recentPosts[0]->id];
         switch ($type){
             case 'departments':
-                $type = 'Departments';
+                $type = 'departments';
                 $departments = Department::select('id','name')->simplePaginate($perPage);
                 $members = [];
-                return view('display.members', compact('members', 'departments',  'departments', 'type'));
+                return view('display.members', compact('members','recentPosts', 'posts', 'departments',  'departments', 'type'));
             case 'managements':
                 $keyword = 'management';
-                $type = 'Managements';
+                $type = 'managements';
                 $perPage = 9;
                 break;
             case 'others':
                 $keyword = 'other';
-                $type = 'Others';
+                $type = 'others';
                 break;
             default:
                 $keyword = '';
                 abort(404);
         }
+
         $members = Member::where('type', "$keyword")
             ->latest()->simplePaginate($perPage);
 
-        return view('display.members', compact('members','type'));
+        return view('display.members', compact('members', 'recentPosts', 'posts', 'type'));
+    }
+
+    public function getRecentPosts($type)
+    {
+        $keyword = $type;
+        return Post::where('category', "$keyword")->get();
     }
 
     public function displayMember($id)

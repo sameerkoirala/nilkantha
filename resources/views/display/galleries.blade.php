@@ -7,7 +7,13 @@
 
     <div class="container">
 
-        <h3 class="text-uppercase py-5">{{ isset($type) ? $type : 'Gallery' }}</h3>
+        <ul class="nav page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="{{url("/")}}">Home</a>
+            </li>
+        </ul>
+        <h3 class="text-uppercase py-4">{{ 'Gallery' }}</h3>
         <div>
             @for ($index = 0; $index < sizeof($posts); $index++)
 

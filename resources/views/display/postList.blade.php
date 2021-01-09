@@ -1,11 +1,15 @@
-@include('display.header')
-@include('display.navbar')
+
 <!-- start of the Alumni student's list section -->
 <section class="academics">
 
     <div class="container">
-
-        <h3 class="text-uppercase py-5">{{ isset($type) ? $type : 'Post WIth Gallery' }}</h3>
+        <ul class="nav page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="{{url("/")}}">Home</a>
+            </li>
+        </ul>
+        <h3 class="text-uppercase py-4">{{ isset($type) ? $type : 'Post WIth Gallery' }}</h3>
 
 
         <div class="row news_content">
@@ -26,7 +30,10 @@
 
                                         </div>
                                         <div class="content news_date">
-                                            <p>Published Date: {{ date('d-M-Y',strtotime($posts[$index]->created_at))}}</p>
+                                            <p>{{ date('d-M-Y',strtotime($posts[$index]->created_at))}}</p>
+                                        </div>
+                                        <div class="news-body">
+
                                         </div>
                                     </div>
                                 </a>
@@ -158,16 +165,3 @@
     <div class="pagination-wrapper text-center"> {!! $posts->render() !!} </div>
 
 </section>
-
-
-<!-- footer -->
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>

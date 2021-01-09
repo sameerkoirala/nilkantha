@@ -102,7 +102,7 @@
         });
     });
     function toggleDepartment(){
-        if($('#type').val() === 'management') {
+        if($('#type').val() === 'management' || $('#type').val() === 'faculty') {
             $('#member_image').show();
         } else {
             $('#member_image').hide();
@@ -116,9 +116,11 @@
             $('#education').hide();
         }
         if($('#type').val() === 'other'){
-            $('#designation').hide();
-        } else {
-            $('#designation').show();
+            $('#designation_input').val('Staff');
+        }
+        else
+        {
+            $('#designation_input').val('');
         }
     }
 </script>

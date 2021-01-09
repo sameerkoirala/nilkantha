@@ -32,7 +32,7 @@
         <div class="row">
 
             <!-- start of vertical side navbar -->
-        @include('members._sidebar')
+        @include('display.aboutUsSidebar')
         <!-- end of vertical side navbar -->
         <!-- middle space between side navbar and table -->
         <div class="col-sm-1"></div>

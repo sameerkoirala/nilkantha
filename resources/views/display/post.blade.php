@@ -1,34 +1,43 @@
 <section class="academics">
 
     <div class="container">
-
-        <h3 class="text-uppercase py-4">{{ isset($type) ? $type : 'Post' }}</h3>
+        <ul class="nav page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="{{url("/")}}">Home</a>
+            </li>
+        </ul>
+        <h3 class="text-uppercase py-4">{{ isset($type) ? ( ( sizeof( explode('_',$type) ) > 1 ) ? explode('_',$type)[0] . ' ' . explode('_',$type)[1] : $type ) : 'Post' }}</h3>
 
         <div class="row">
 
             <!-- start of vertical side navbar -->
-            <div class="col-sm-3 vertical-nav bg-white " id="sidebar">
 
-                <p class="text-gray font-weight-bold  ">Related Links</p>
+            @if($type === 'about_us')
+                @include('display.aboutUsSidebar')
+            @else
+                <div class="col-sm-3 vertical-nav bg-white " id="sidebar">
 
-                <ul class="nav flex-column bg-white mb-0">
+                    <ul class="nav flex-column bg-white mb-0">
 
-                    @foreach($recentPosts as $post)
-                        <li class="nav-item ">
-                            <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark current bg-light"><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
-                        </li>
-                    @endforeach
+                        @foreach($recentPosts as $post)
+                            <li class="nav-item {{ $postId == $post['id'] ? 'sidebar-active' : ''}}">
+                                <a href="{{ url('/posts'). "/$type" . '/' . $post["id"]}}" class="nav-link text-dark current bg-light"><i class="fa fa-chevron-right mr-3 "></i>{{ $post["title"] }}</a>
+                            </li>
+                        @endforeach
 
-                </ul>
+                    </ul>
 
-            </div>
+                </div>
+            @endif
+
             <!-- end of vertical side navbar -->
 
             <!-- middle space between side navbar and table -->
             <div class="col-sm-1"></div>
 
             <!-- Page content - nepali department  -->
-            <div class="col-sm-8 page-content  " id="content">
+            <div class="col-sm-8 page-content" id="content">
 
                 @foreach($posts as $post)
 
@@ -36,8 +45,8 @@
                     <p></p>
 
                     @if(!empty($post->image_path))
-                        <div class="img-wrapper" style="height: 200px;">
-                       ` <td><img src=" {{ url("$post->image_path")}}" width="100%" height="180px"/></td>
+                        <div class="img-wrapper" style="height: 300px !important; overflow: hidden;">
+                        <td><img src=" {{ url("$post->image_path")}}" width="100%" /></td>
 
                         </div>
                     @endif

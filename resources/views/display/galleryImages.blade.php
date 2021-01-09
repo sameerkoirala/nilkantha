@@ -8,15 +8,15 @@
 
     <div class="container">
 
-        <h3 class="text-uppercase py-4">{{ isset($galleryName) ? $galleryName : 'Image Gallery' }}</h3>
-        <ul class="page-breadcrumb">
+        <ul class="nav page-breadcrumb">
             <li>
                 <i class="fa fa-home"></i>
                 <a href="{{url("/")}}">Home</a>
                 <i class="fa fa-angle-right"></i>
-                <a href="{{url("/view/galleries")}}">Galleries</a>
+                <a href="{{url("/view/galleries")}}">Gallery</a>
             </li>
         </ul>
+        <h3 class="text-uppercase py-4">{{ isset($galleryName) ? $galleryName . ' Gallery' : 'Image Gallery' }}</h3>
         <div>
             @for ($index = 0; $index < sizeof($images); $index++)
                 @if( ($index) % 3 === 0)
