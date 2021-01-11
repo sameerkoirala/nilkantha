@@ -533,7 +533,7 @@ body{
 .gallery{
 
     width: 100%;
-    padding: 40px 0 150px;
+    /* padding: 40px 0 150px; */
 }
 
 .gallery h1{
@@ -677,10 +677,18 @@ body{
         background-color: #A9B7C0 !important;
       } */
 
-    .alumni_text
+    /* .alumni_text
     {
       margin-top: 40px;
+    } */
+    .alumni_card
+    {
+      height: 430px !important;
     }
+
+.news_article {
+  margin-bottom: 0px !important;
+}
 
  }
 
@@ -798,4 +806,8 @@ w-100
 .news_date
 {
     padding-top: 10px;
+}
+.page-breadcrumb
+{
+  margin: 10px;
 }

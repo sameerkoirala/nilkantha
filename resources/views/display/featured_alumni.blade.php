@@ -32,7 +32,7 @@
                         <div class="row ">
                             @endif
                             <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto alumni_img">
-                                <div class="card">
+                                <div class="card alumni_card">
                                     <img src="{{ url($alumni[$index]->image_path) }}" class="img-fluid">
                                     <div class="text-content alumni_text">
                                         <h6>{{ $alumni[$index]->first_name .
