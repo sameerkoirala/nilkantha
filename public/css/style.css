@@ -266,7 +266,7 @@ body{
 }
 .featured-news
 {
-    height: 250px;
+    /* height: 250px; */ /* Can be used if responsive donot work*/
     width: cover;
     /*background-color: red;*/
     padding-left: 95px !important;
@@ -572,15 +572,24 @@ body{
 .vertical-nav ul li a{padding: 15px;}
 .page-breadcrumb li{list-style: none;}
 
+/* Hide and Show Responsive */
 
-
-
-
-
+.sm-only
+{
+  display: none !important;
+}
+.pc-only
+{
+  display: block !important;
+}
 
 
 @media all and (max-width: 767px)
 {
+
+  .main-nav
+  {background-color: rgba(0,0,0,0.692) !important;
+  }
     .size_a
     {
         height: 60vh !important;
@@ -589,7 +598,62 @@ body{
     {
         height: 60vh;
     }
+    .pc-only
+    {
+      display:none !important;
+    }
+    .sm-only
+    {
+      display: block;
+    }
+    .footer_content
+    {
+      padding-left: 0px !important;
+    }
+    .fixed-background
+    {
+    margin-top: 100%;
+    }
+    .founder_message p
+    {
+      text-align: center !important;
+    }
+    .scroll-content p
+    {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    .fixed-background p
+    {
+      margin-top: 0px !important;
+    }
+    .upcoming-events
+    {
+      height: 400px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .featured-news
+    {
+
+      padding-left: 0px !important;
+    }
+    .scrolled
+    {
+    background-color: rgba(0,0,0,0.692) !important;
+    }
+    /* .navbar .dropdown-menu {
+    background-color: black !important;
+    }
+    .navbar .dropdown.show a {
+  background-color: black !important;
 }
+.navbar-inverse {
+        background-color: #A9B7C0 !important;
+      } */
+
+ }
+
 
 @media (max-width: 1085px){
     .gallery{

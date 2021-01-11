@@ -1,12 +1,12 @@
 <!-- <header class="nav-area"> -->
 <header class="">
 
-    <div class="row ">
+    <div class="row pc-only ">
         <!-- Top NavBar Starts: Displaying Address and Login, No Display on Mobile View smart-scroll -->
         @if(isset($type))
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-bar bgcolor">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar top-bar bgcolor main-nav">
         @else
-            <nav class="navbar  navbar-expand-lg navbar-light fixed-top top-bar bgcolor">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top main-nav top-bar bgcolor">
         @endif
             <div class="container">
                 <ul class="list-inline mb-0 py-2" >
@@ -31,10 +31,10 @@
                 </ul>
 
                 <!-- Collapse for mobile view -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> -->
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,7 +57,7 @@
     <!--Start of Bottom / Main Nav Bar -->
     <div class="row">
 
-        <nav class="navscroll navbar fixed-top navbar-expand-lg navbar-dark  down-bar bgcolor ">
+        <nav class="navscroll navbar fixed-top navbar-expand-lg navbar-dark main-nav down-bar bgcolor ">
             <div class="container">
 
                 <!-- Brand -->
