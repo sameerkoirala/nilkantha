@@ -107,8 +107,8 @@
     @endif
 </section>
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
+
+    <div class="col-md-12">
         @if($contact->exists)
             <div class="container-fluid">
                 <div class="row">

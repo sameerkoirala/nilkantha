@@ -29,12 +29,12 @@
 
                 @for ($index = 0; $index < sizeof($alumni); $index++)
                     @if( ($index) % 3 === 0)
-                        <div class="row">
+                        <div class="row ">
                             @endif
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto alumni_img">
                                 <div class="card">
                                     <img src="{{ url($alumni[$index]->image_path) }}" class="img-fluid">
-                                    <div class="text-content">
+                                    <div class="text-content alumni_text">
                                         <h6>{{ $alumni[$index]->first_name .
                                 ( isset( $alumni[$index]->middle_name) ? (' ' . $alumni[$index]->middle_name) : ' ') .
                                 $alumni[$index]->last_name  }}</h6>

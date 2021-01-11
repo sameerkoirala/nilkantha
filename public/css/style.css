@@ -474,6 +474,14 @@ body{
     background-color: #29aafe;
 }
 
+/*Faculty Pages */
+.faculty_card
+{
+  height: 0px !important;
+}
+
+
+
 
 /*--------About Us Page Start ---------*/
 
@@ -483,6 +491,18 @@ body{
     background-attachment: fixed;
     width: 100%;
     height: 50vh;
+}
+
+/* Alumni Page*/
+/* .alumni_img
+{
+  padding-bottom: 150px;
+}
+*/
+.alumni_text
+{
+  /* margin-top: 75px; */
+  padding: 10px;
 }
 
 /*acdemics section*/
@@ -538,6 +558,7 @@ body{
 }
 .contact-box{
     margin: 30px;
+    height: 160px !important;
 }
 .contact-icon {
     color: #fff;
@@ -606,6 +627,10 @@ body{
     {
       display: block;
     }
+    .footer
+    {
+      padding: 0px !important;
+    }
     .footer_content
     {
       padding-left: 0px !important;
@@ -652,6 +677,11 @@ body{
         background-color: #A9B7C0 !important;
       } */
 
+    .alumni_text
+    {
+      margin-top: 40px;
+    }
+
  }
 
 
@@ -690,7 +720,7 @@ body{
     margin-top:10px;
     margin-bottom:10px;
     background-color:#FFF;
-    height: 300px;
+    height: 380px;
 }
 
 .card:hover {
@@ -735,7 +765,7 @@ body{
 }
 .image
 {
-    height: 180px !important;
+    height: 160px !important;
     overflow: hidden;
 }
 
@@ -751,6 +781,19 @@ w-100
 {
     padding: 0 30px;
     margin-bottom: 45px;
+}
+.notice_card
+{
+  height: 300px !important;
+}
+.galleries_card
+{
+  height: 250px !important;
+}
+.galleryview_card
+{
+  width: auto;
+  height: 270px;
 }
 .news_date
 {

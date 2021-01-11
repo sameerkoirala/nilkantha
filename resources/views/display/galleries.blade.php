@@ -21,7 +21,7 @@
                     <div class="row">
                         @endif
                         <div class="col-sm-4 news_article">
-                            <div class="card">
+                            <div class="card galleries_card">
                                 <a href="{{ url('/') . '/view/gallery/' . $posts[$index]->id }}">
                                     <div class="image-wrapper image">
                                         <img src="{{ url('/') . '/' . $posts[$index]->image_path }}" class="img-fluid w-100"/>

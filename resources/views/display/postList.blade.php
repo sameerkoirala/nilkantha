@@ -19,7 +19,7 @@
                     <div class="row">
                         @endif
                         <div class="col-sm-4 news_article">
-                            <div class="card">
+                            <div class="card notice_card">
                                 <a href="{{ url('/posts') . '/'. $type . '/' . $posts[$index]->id }}">
                                     <div class="image-wrapper image">
                                         <img src="{{ url('/') . '/' . $posts[$index]->image_path }}" class="img-fluid w-100"/>

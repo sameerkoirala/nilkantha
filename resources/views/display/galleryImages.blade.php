@@ -23,7 +23,7 @@
                     <div class="row gallerys">
                         @endif
                         <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
-                            <div class="card">
+                            <div class="card galleryview_card">
                                 <a href="{{ url( '/' ) . '/' . $images[$index]->path }}">
                                     <img src="{{ url( '/' ) . '/' . $images[$index]->path }}" class="card-img img-fluid">
                                 </a>
