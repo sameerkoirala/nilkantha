@@ -625,7 +625,7 @@ body{
     }
     .sm-only
     {
-      display: block;
+      display: block !important;
     }
     .footer
     {
@@ -684,6 +684,12 @@ body{
     .alumni_card
     {
       height: 430px !important;
+    }
+    .galleryview_card
+    {
+      width: auto;
+      height: 190px !important;
+      padding-bottom: 20px;
     }
 
 .news_article {
@@ -810,4 +816,8 @@ w-100
 .page-breadcrumb
 {
   margin: 15px;
+}
+.googlemap_width
+{
+  width: 100% !important;
 }

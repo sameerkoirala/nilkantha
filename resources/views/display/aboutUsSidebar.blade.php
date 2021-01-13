@@ -1,6 +1,6 @@
 <div class="col-sm-3 vertical-nav bg-white " id="sidebar">
 
-    <br />
+
     <ul class="nav flex-column bg-white mb-0">
 
         <li class="nav-item ">

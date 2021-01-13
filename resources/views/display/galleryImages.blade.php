@@ -17,7 +17,7 @@
             </li>
         </ul>
         <h3 class="text-uppercase py-4">{{ isset($galleryName) ? $galleryName . ' Gallery' : 'Image Gallery' }}</h3>
-        <div>
+        <!-- <div > -->
             @for ($index = 0; $index < sizeof($images); $index++)
                 @if( ($index) % 3 === 0)
                     <div class="row gallerys">
@@ -33,7 +33,7 @@
                     </div>
                 @endif
             @endfor
-        </div>
+        <!-- </div> -->
         <br />
         <div class="pagination-wrapper text-center"> {!! $images->render() !!} </div>
     </div>

@@ -34,7 +34,7 @@
             <!-- end of vertical side navbar -->
 
             <!-- middle space between side navbar and table -->
-            <div class="col-sm-1"></div>
+            <!-- <div class="col-sm-1"></div> -->
 
             <!-- Page content - nepali department  -->
             <div class="col-sm-8 page-content" id="content">
