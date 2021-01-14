@@ -61,13 +61,13 @@
             <div class="container">
 
                 <!-- Brand -->
-                <a class="navbar-brand" href="{{ url('/') }}" >
-{{--                    @if(isset(Illuminate\Support\Facades\Config::get('configurations')->image_path))--}}
+                <a class="navbar-brand nav_logo" href="{{ url('/') }}" >
+                  @if(isset(Illuminate\Support\Facades\Config::get('configurations')->image_path))
 
-{{--                        <img class="rounded-circle z-depth-2" alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="200px" height="120px"/>--}}
-{{--                    @else--}}
+                      <img  alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="auto" height="auto"/>
+                  @else
                         <strong>{{ Illuminate\Support\Facades\Config::get('configurations')->title ?? 'Nilkantha School '}}</strong>
-{{--                    @endif--}}
+                   @endif
                 </a>
 
                 <!-- Collapse -->

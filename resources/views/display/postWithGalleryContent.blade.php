@@ -44,6 +44,7 @@
                     <p></p>
                     @if(!empty($post->image_path))
                         <td style="height: 300px !important; overflow: hidden;"><img src=" {{ url($post->image_path)}}" width="100%"></td>
+                        <p></p>
                     @endif
                     {!! $post->description !!}
                     @if(!empty($post->video_link))
@@ -62,9 +63,9 @@
                                 <div class="row">
                             @endif
                                     <div class="col-sm-4 news_article">
-                                        <div class="card">
+                                        <div class="card postwithGallery_card">
                                             <a href="#">
-                                                <div class="image-wrapper image">
+                                                <div class="image-wrapper image_postGallery">
                                                     <img src="{{ url('/') . '/' . $post->images[$index]->path }}" class="img-fluid w-100"/>
                                                 </div>
                                             </a>
