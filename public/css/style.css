@@ -825,7 +825,8 @@ w-100
 .galleryview_card
 {
   width: auto;
-  height: 270px;
+  height: 150px;
+  overflow: hidden !important;
 }
 .news_date
 {
