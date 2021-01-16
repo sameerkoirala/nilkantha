@@ -1,5 +1,5 @@
-<div class="col-md-3">
-    <div class="card">
+<div class="col-md-3 admin-sidebar-wrap">
+    <div class="card admin-sidebar">
         <div class="card-header">
             Sidebar
         </div>

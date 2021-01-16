@@ -11,7 +11,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <style>
 
+        .admin-sidebar {
+            background-color: #555555 !important; color: #fff !important;
+        }
+        .admin-sidebar ul li a{color: #fff !important;}
+        .admin-sidebar-wrap {position: fixed; left: 0;}
+    </style>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
