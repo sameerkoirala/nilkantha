@@ -19,12 +19,17 @@ body{
 .top-bar
 {
     font-size: 15px !important;
+    padding-bottom: 0 !important;
+    border-bottom: 1px solid #555555 !important;
     /*font-weight: 100;*/
 }
+
+.top-bar.scrolled {border-bottom: 1px solid #eee !important;}
 .top-btn
 {
-    height: 35px !important;
-    width: 90px;
+    height: auto;
+    width: 75px;
+    font-size: 14px !important;
 }
 .top-btn:hover
 {
@@ -355,6 +360,10 @@ body{
 
 
 /*-------------hapennings ends--------*/
+
+/* --- admin panel ---- */
+
+
 
 /*footer*/
 

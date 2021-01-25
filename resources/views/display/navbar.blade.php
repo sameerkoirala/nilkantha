@@ -64,7 +64,7 @@
                 <a class="navbar-brand nav_logo" href="{{ url('/') }}" >
                   @if(isset(Illuminate\Support\Facades\Config::get('configurations')->image_path))
 
-                      <img  alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="auto" height="auto"/>
+                      <img  alt="{{Illuminate\Support\Facades\Config::get('configurations')->title}}" src="{{ url('/') . '/' . Illuminate\Support\Facades\Config::get('configurations')->image_path }}" width="165px" height="auto"/>
                   @else
                         <strong>{{ Illuminate\Support\Facades\Config::get('configurations')->title ?? 'Nilkantha School '}}</strong>
                    @endif
