@@ -11,7 +11,7 @@
 
     </div>
 
-    @if(!$contact->exists)
+    @if($contact->exists)
         <div class="container page-desc">
             <h5 class="r-sub-title-b text-center">We would love to hear from you. Please contact us at:</h5>
 
@@ -49,22 +49,6 @@
             </div>
 
             <!--Contact Links -->
-            <h5 class="r-sub-title-b text-center">Follow us at:</h5>
-
-            <div class="container text-center">
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-facebook-f s-icons" style="color: #0f5288"></i>
-                </a>
-
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-instagram s-icons" style="color: #0f5288"></i>
-                </a>
-
-                <a href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-3x fa-youtube s-icons" style="color: #0f5288"></i>
-                </a>
-            </div>
-
         </div>
     @else
         <div class="container page-desc">

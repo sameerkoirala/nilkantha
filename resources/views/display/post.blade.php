@@ -46,7 +46,7 @@
 
                     @if(!empty($post->image_path))
                         <div class="img-wrapper" style="height: 300px !important; overflow: hidden;">
-                        <td><img src=" {{ url("$post->image_path")}}" width="100%" /></td>
+                        <td><img src=" {{ url("$post->image_path")}}" width="100%" height="auto" /></td>
 
                         </div>
                     @endif

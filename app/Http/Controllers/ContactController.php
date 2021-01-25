@@ -70,9 +70,25 @@ class ContactController extends Controller
 
         $requestData = $request->all();
 
-        Contact::create($requestData);
+        $googleMapUriStrings = explode(' ', $requestData['googleMapUrl']);
 
-        return redirect('contact')->with('flash_message', 'Contact added!');
+        $newGoogleMapUri = "";
+        foreach ($googleMapUriStrings as $str)
+        {
+            if (strpos($googleMapUriStrings, "height") != false)
+            {
+                $newGoogleMapUri = $newGoogleMapUri . "height=\"100%\"";
+            }
+            else
+            {
+                $newGoogleMapUri = $newGoogleMapUri . ' ' . $googleMapUriStrings;
+            }
+        }
+        echo $newGoogleMapUri;
+//        $requestData['googleMapUrl'] = $newGoogleMapUri;
+//        Contact::create($requestData);
+//
+//        return redirect('contact')->with('flash_message', 'Contact added!');
     }
 
     public function saveInquiryDetails(Request $request){

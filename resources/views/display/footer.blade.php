@@ -24,7 +24,7 @@
                         <li><a href="{{ url('/view/news') }}">News</a></li>
                         <li><a href="{{ url('/view/events') }}">Events</a></li>
                         <li><a href="{{ url('/view/notices') }}">Notices</a></li>
-                      
+
                       </ul>
                   </div>
                   <div class="col-md-5 col-sm-3">
@@ -73,9 +73,15 @@
             <div class="col-6 col-md-3 ">
                 <h6 >Contact Us</h6>
                 <ul class="footer-links">
-                    <li><span aria-hidden="true" class="fas fa-map-marker-alt fa-sm mr-2"></span>Nilkantha, Dhading, Nepal</li>
-                    <li><span aria-hidden="true" class="fas fa-phone fa-sm mr-2" ></span>01-2038382</li>
-                    <li><span aria-hidden="true" class="far fa-envelope fa-sm mr-2"></span>info@nilkantha.com</li>
+                    <li><span aria-hidden="true" class="fas fa-map-marker-alt fa-sm mr-2"></span>
+                        {{ !empty(Illuminate\Support\Facades\Config::get('contact')->address) ? Illuminate\Support\Facades\Config::get('contact')->address : 'Nilkantha, Dhading, Nepal' }}
+                    </li>
+                    <li><span aria-hidden="true" class="fas fa-phone fa-sm mr-2" ></span>
+                        {{ !empty(Illuminate\Support\Facades\Config::get('contact')->phone) ? Illuminate\Support\Facades\Config::get('contact')->phone : '01-0520106' }}
+                    </li>
+                    <li><span aria-hidden="true" class="far fa-envelope fa-sm mr-2"></span>
+                        {{ !empty(Illuminate\Support\Facades\Config::get('contact')->email) ? Illuminate\Support\Facades\Config::get('contact')->email : 'info@nilkantha.com' }}
+                    </li>
                 </ul>
             </div>
 

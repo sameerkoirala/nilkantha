@@ -13,7 +13,7 @@
                     <li class="list-inline-item" >
                         <a href="#" style="color: white">
                             <span aria-hidden="true" class="fas fa-phone fa-sm" ></span>
-                            {{ !empty(Illuminate\Support\Facades\Config::get('contact')->phone) ? Illuminate\Support\Facades\Config::get('contact')->phone : '01-2038382' }}
+                            {{ !empty(Illuminate\Support\Facades\Config::get('contact')->phone) ? Illuminate\Support\Facades\Config::get('contact')->phone : '01-0520106' }}
                         </a>
                     </li>
                     <li class="list-inline-item" >

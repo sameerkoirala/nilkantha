@@ -43,7 +43,7 @@
 
                     <p></p>
                     @if(!empty($post->image_path))
-                        <td style="height: 300px !important; overflow: hidden;"><img src=" {{ url($post->image_path)}}" width="100%"></td>
+                        <td style="height: 300px !important; overflow: hidden;"><img src=" {{ url($post->image_path)}}" width="100%" height="auto"></td>
                         <p></p>
                     @endif
                     {!! $post->description !!}
