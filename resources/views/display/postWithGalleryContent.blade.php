@@ -60,11 +60,11 @@
 
                         @for ($index = 0; $index < sizeof($post->images); $index++)
                             @if( $index % 3 === 0)
-                                <div class="row">
+                                <div class="row gallerys">
                             @endif
                                     <div class="col-sm-4 news_article">
                                         <div class="card postwithGallery_card">
-                                            <a href="#">
+                                            <a href="{{url('/') . '/' . $post->images[$index]->path}}">
                                                 <div class="image-wrapper image_postGallery">
                                                     <img src="{{ url('/') . '/' . $post->images[$index]->path }}" class="img-fluid w-100"/>
                                                 </div>
