@@ -56,7 +56,7 @@
                     <p></p>
 
                     @if(!empty($post->file_path))
-                        <button class="btn"><i class="fa fa-download"></i> {{ 'Download' }}</button>
+                        <a href="{{ url($post->file_path) }}" target="_blank"><button class="btn"><i class="fa fa-download"></i> {{ 'Download' }}</button></a>
                     @endif
 
                 @endforeach

@@ -66,17 +66,12 @@
 
             <span class="marquee noticeText">
 				<marquee>
-					<a href="#"> Scholarship Notice</a>	&nbsp;&nbsp;
-					<a href="#"> Result of Grade X</a>	&nbsp;&nbsp;
-					<a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
-					<a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
-					<a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
-                     @if( $posts['notices']->isEmpty() )--}}
-                    <a href="#"> Scholarship Notice</a>	&nbsp;&nbsp;
-                    <a href="#"> Result of Grade X</a>	&nbsp;&nbsp;
-                    <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
-                    <a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
-                    <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
+                     @if( $posts['notices']->isEmpty() )
+                        <a href="#"> Scholarship Notice</a>	&nbsp;&nbsp;
+                        <a href="#"> Result of Grade X</a>	&nbsp;&nbsp;
+                        <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
+                        <a href="#"> Result of Semester and Unit Test</a>	&nbsp;&nbsp;
+                        <a href="#"> Dashain Vacation Notice</a>&nbsp;&nbsp;
                     @else
                         @foreach( $posts['notices'] as $notice )
                             <a href="{{ url('/') . '/view/notices/' . $notice['id'] }}">{{ $notice['title'] }}</a>&nbsp;&nbsp;

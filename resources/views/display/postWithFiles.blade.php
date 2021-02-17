@@ -42,21 +42,42 @@
                     @endif
                     {!! $post->description !!}
 
-                    @if(sizeof($post->files) > 0)
-                        <table class="table">
-                            <tbody>
-                            @foreach ($post->files as $file)
+                    <br/>
+                    <br/>
+                    <table class="table">
+                        <tbody>
+                        @if(!empty($post->file_path))
+                            <tr>
+                                <td>{{ $post->title }}</td>
+                                <td><i class="fa fa-download"></i> <a href="{{ url($post->file_path) }}" target="_blank">Download</a></td>
+                            </tr>
+                        @endif
+                        @foreach ($post->files as $file)
 
-                                <tr>
-                                    <td>{{ $file->title }}</td>
-                                    <td class="btn"><i class="fa fa-download"></i> <a href="{{ url($file->path) }}" target="_blank">Download</a></td>
-                                </tr>
+                            <tr>
+                                <td>{{ $file->title }}</td>
+                                <td class="btn"><i class="fa fa-download"></i> <a href="{{ url($file->path) }}" target="_blank">Download</a></td>
+                            </tr>
 
-                            @endforeach
-                            </tbody>
-                        </table>
+                        @endforeach
+                        </tbody>
+                    </table>
 
-                    @endif
+{{--                    @if(sizeof($post->files) > 0)--}}
+{{--                        <table class="table">--}}
+{{--                            <tbody>--}}
+{{--                            @foreach ($post->files as $file)--}}
+
+{{--                                <tr>--}}
+{{--                                    <td>{{ $file->title }}</td>--}}
+{{--                                    <td class="btn"><i class="fa fa-download"></i> <a href="{{ url($file->path) }}" target="_blank">Download</a></td>--}}
+{{--                                </tr>--}}
+
+{{--                            @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+
+{{--                    @endif--}}
                 @endforeach
             </div>
 

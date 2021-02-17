@@ -83,7 +83,7 @@ class HomeController extends Controller
 
         if ($type === 'Faculties' || $type === 'Managements' || $type === 'Others')
         {
-            echo 'yo';
+//            echo 'yo';
             return redirerct("/members/$type/$id");
         }
         else{
